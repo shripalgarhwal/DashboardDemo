@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+  <meta charset="utf-8">  
+  <title>Wellington</title>
+
+  <!-- build:css styles/lib.css -->
+  <!-- bower:css -->
+  <link rel="stylesheet" href="../bower_components/angular-bootstrap-grid-tree/src/treeGrid.css" />
+  <!-- endbower -->
+  <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css" />
+  <!-- endbuild -->
+
+  <!-- build:css styles/style.css -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="/app/styles/style.css">
+  <!-- endinject -->
+  <!-- endbuild -->
+  
+  <!-- build:js js/lib.js -->
+  <!-- bower:js -->
+  <script src="../bower_components/jquery/dist/jquery.js"></script>
+  <script src="../bower_components/angular/angular.js"></script>
+  <script src="../bower_components/angular-route/angular-route.js"></script>
+  <script src="../bower_components/angular-loader/angular-loader.js"></script>
+  <script src="../bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="../bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="../bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="../bower_components/angular-mocks/angular-mocks.js"></script>
+  <script src="../bower_components/angular-bootstrap-grid-tree/src/tree-grid-directive.js"></script>
+  <script src="../bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
+  <script src="../bower_components/highcharts/highcharts.js"></script>
+  <!-- endbower -->
+  <!-- endbuild -->
+</head>
+<body>
+  <div>
+    <header class="main-header">
+      <nav class="navbar col-md-12 margin-none"><h4><b>Wellington</b></h4></nav>
+    </header>
+    <div ui-view></div>
+  </div>
+  <!-- build:js js/app.js -->
+  <!-- inject:js -->
+  <script src="/app/app-js/app.module.js"></script>
+  <script src="/app/app-js/common/com.module.js"></script>
+  <script src="/app/app-js/core/core.router.module.js"></script>
+  <script src="/app/app-js/components/dashboard/app.dashboard.module.js"></script>
+  <script src="/app/app-js/components/home/app.home.module.js"></script>
+  <script src="/app/app-js/common/com.fund-data.service.js"></script>
+  <script src="/app/app-js/common/com.rest.service.js"></script>
+  <script src="/app/app-js/components/dashboard/app.dashboard.controller.js"></script>
+  <script src="/app/app-js/components/dashboard/app.dashboard.hcChart.directive.js"></script>
+  <script src="/app/app-js/components/dashboard/app.dashboard.pieChard.directive.js"></script>
+  <script src="/app/app-js/components/home/app.home.controller.js"></script>
+  <script src="/app/app-js/components/home/app.home.directive.js"></script>
+  <!-- endinject -->
+  <!-- inject:templates:js -->
+  <!-- endinject -->
+  <!-- endbuild -->
+</body>
+</html>

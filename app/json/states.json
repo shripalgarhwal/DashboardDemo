@@ -1,0 +1,252 @@
+[
+  {
+    "state": "Alabama",
+    "city": "Alabama",
+    "flag": "5/5c/Flag_of_Alabama.svg/45px-Flag_of_Alabama.svg.png"
+  },
+  {
+    "state": "Alaska",
+    "city": "Alaska",
+    "flag": "e/e6/Flag_of_Alaska.svg/43px-Flag_of_Alaska.svg.png"
+  },
+  {
+    "state": "Arizona",
+    "city": "Arizona",
+    "flag": "9/9d/Flag_of_Arizona.svg/45px-Flag_of_Arizona.svg.png"
+  },
+  {
+    "state": "Arkansas",
+    "city": "Arkansas",
+    "flag": "9/9d/Flag_of_Arkansas.svg/45px-Flag_of_Arkansas.svg.png"
+  },
+  {
+    "state": "California",
+    "city": "California",
+    "flag": "0/01/Flag_of_California.svg/45px-Flag_of_California.svg.png"
+  },
+  {
+    "state": "Colorado",
+    "city": "Colorado",
+    "flag": "4/46/Flag_of_Colorado.svg/45px-Flag_of_Colorado.svg.png"
+  },
+  {
+    "state": "Connecticut",
+    "city": "Connecticut",
+    "flag": "9/96/Flag_of_Connecticut.svg/39px-Flag_of_Connecticut.svg.png"
+  },
+  {
+    "state": "Delaware",
+    "city": "Delaware",
+    "flag": "c/c6/Flag_of_Delaware.svg/45px-Flag_of_Delaware.svg.png"
+  },
+  {
+    "state": "Florida",
+    "city": "Florida",
+    "flag": "f/f7/Flag_of_Florida.svg/45px-Flag_of_Florida.svg.png"
+  },
+  {
+    "state": "Georgia",
+    "city": "Georgia",
+    "flag": "5/54/Flag_of_Georgia_%28U.S._state%29.svg/46px-Flag_of_Georgia_%28U.S._state%29.svg.png"
+  },
+  {
+    "state": "Hawaii",
+    "city": "Hawaii",
+    "flag": "e/ef/Flag_of_Hawaii.svg/46px-Flag_of_Hawaii.svg.png"
+  },
+  {
+    "state": "Idaho",
+    "city": "Idaho",
+    "flag": "a/a4/Flag_of_Idaho.svg/38px-Flag_of_Idaho.svg.png"
+  },
+  {
+    "state": "Illinois",
+    "city": "Illinois",
+    "flag": "0/01/Flag_of_Illinois.svg/46px-Flag_of_Illinois.svg.png"
+  },
+  {
+    "state": "Indiana",
+    "city": "Indiana",
+    "flag": "a/ac/Flag_of_Indiana.svg/45px-Flag_of_Indiana.svg.png"
+  },
+  {
+    "state": "Iowa",
+    "city": "Iowa",
+    "flag": "a/aa/Flag_of_Iowa.svg/44px-Flag_of_Iowa.svg.png"
+  },
+  {
+    "state": "Kansas",
+    "city": "Kansas",
+    "flag": "d/da/Flag_of_Kansas.svg/46px-Flag_of_Kansas.svg.png"
+  },
+  {
+    "state": "Kentucky",
+    "city": "Kentucky",
+    "flag": "8/8d/Flag_of_Kentucky.svg/46px-Flag_of_Kentucky.svg.png"
+  },
+  {
+    "state": "Louisiana",
+    "city": "Louisiana",
+    "flag": "e/e0/Flag_of_Louisiana.svg/46px-Flag_of_Louisiana.svg.png"
+  },
+  {
+    "state": "Maine",
+    "city": "Maine",
+    "flag": "3/35/Flag_of_Maine.svg/45px-Flag_of_Maine.svg.png"
+  },
+  {
+    "state": "Maryland",
+    "city": "Maryland",
+    "flag": "a/a0/Flag_of_Maryland.svg/45px-Flag_of_Maryland.svg.png"
+  },
+  {
+    "state": "Massachusetts",
+    "city": "Massachusetts",
+    "flag": "f/f2/Flag_of_Massachusetts.svg/46px-Flag_of_Massachusetts.svg.png"
+  },
+  {
+    "state": "Michigan",
+    "city": "Michigan",
+    "flag": "b/b5/Flag_of_Michigan.svg/45px-Flag_of_Michigan.svg.png"
+  },
+  {
+    "state": "Minnesota",
+    "city": "Minnesota",
+    "flag": "b/b9/Flag_of_Minnesota.svg/46px-Flag_of_Minnesota.svg.png"
+  },
+  {
+    "state": "Mississippi",
+    "city": "Mississippi",
+    "flag": "4/42/Flag_of_Mississippi.svg/45px-Flag_of_Mississippi.svg.png"
+  },
+  {
+    "state": "Missouri",
+    "city": "Missouri",
+    "flag": "5/5a/Flag_of_Missouri.svg/46px-Flag_of_Missouri.svg.png"
+  },
+  {
+    "state": "Montana",
+    "city": "Montana",
+    "flag": "c/cb/Flag_of_Montana.svg/45px-Flag_of_Montana.svg.png"
+  },
+  {
+    "state": "Nebraska",
+    "city": "Nebraska",
+    "flag": "4/4d/Flag_of_Nebraska.svg/46px-Flag_of_Nebraska.svg.png"
+  },
+  {
+    "state": "Nevada",
+    "city": "Nevada",
+    "flag": "f/f1/Flag_of_Nevada.svg/45px-Flag_of_Nevada.svg.png"
+  },
+  {
+    "state": "New Hampshire",
+    "city": "New Hampshire",
+    "flag": "2/28/Flag_of_New_Hampshire.svg/45px-Flag_of_New_Hampshire.svg.png"
+  },
+  {
+    "state": "New Jersey",
+    "city": "New Jersey",
+    "flag": "9/92/Flag_of_New_Jersey.svg/45px-Flag_of_New_Jersey.svg.png"
+  },
+  {
+    "state": "New Mexico",
+    "city": "New Mexico",
+    "flag": "c/c3/Flag_of_New_Mexico.svg/45px-Flag_of_New_Mexico.svg.png"
+  },
+  {
+    "state": "New York",
+    "city": "New York",
+    "flag": "1/1a/Flag_of_New_York.svg/46px-Flag_of_New_York.svg.png"
+  },
+  {
+    "state": "North Carolina",
+    "city": "North Carolina",
+    "flag": "b/bb/Flag_of_North_Carolina.svg/45px-Flag_of_North_Carolina.svg.png"
+  },
+  {
+    "state": "North Dakota",
+    "city": "North Dakota",
+    "flag": "e/ee/Flag_of_North_Dakota.svg/38px-Flag_of_North_Dakota.svg.png"
+  },
+  {
+    "state": "Ohio",
+    "city": "Ohio",
+    "flag": "4/4c/Flag_of_Ohio.svg/46px-Flag_of_Ohio.svg.png"
+  },
+  {
+    "state": "Oklahoma",
+    "city": "Oklahoma",
+    "flag": "6/6e/Flag_of_Oklahoma.svg/45px-Flag_of_Oklahoma.svg.png"
+  },
+  {
+    "state": "Oregon",
+    "city": "Oregon",
+    "flag": "b/b9/Flag_of_Oregon.svg/46px-Flag_of_Oregon.svg.png"
+  },
+  {
+    "state": "Pennsylvania",
+    "city": "Pennsylvania",
+    "flag": "f/f7/Flag_of_Pennsylvania.svg/45px-Flag_of_Pennsylvania.svg.png"
+  },
+  {
+    "state": "Rhode Island",
+    "city": "Rhode Island",
+    "flag": "f/f3/Flag_of_Rhode_Island.svg/32px-Flag_of_Rhode_Island.svg.png"
+  },
+  {
+    "state": "South Carolina",
+    "city": "South Carolina",
+    "flag": "6/69/Flag_of_South_Carolina.svg/45px-Flag_of_South_Carolina.svg.png"
+  },
+  {
+    "state": "South Dakota",
+    "city": "South Dakota",
+    "flag": "1/1a/Flag_of_South_Dakota.svg/46px-Flag_of_South_Dakota.svg.png"
+  },
+  {
+    "state": "Tennessee",
+    "city": "Tennessee",
+    "flag": "9/9e/Flag_of_Tennessee.svg/46px-Flag_of_Tennessee.svg.png"
+  },
+  {
+    "state": "Texas",
+    "city": "Texas",
+    "flag": "f/f7/Flag_of_Texas.svg/45px-Flag_of_Texas.svg.png"
+  },
+  {
+    "state": "Utah",
+    "city": "Utah",
+    "flag": "f/f6/Flag_of_Utah.svg/45px-Flag_of_Utah.svg.png"
+  },
+  {
+    "state": "Vermont",
+    "city": "Vermont",
+    "flag": "4/49/Flag_of_Vermont.svg/46px-Flag_of_Vermont.svg.png"
+  },
+  {
+    "state": "Virginia",
+    "city": "Virginia",
+    "flag": "4/47/Flag_of_Virginia.svg/44px-Flag_of_Virginia.svg.png"
+  },
+  {
+    "state": "Washington",
+    "city": "Washington",
+    "flag": "5/54/Flag_of_Washington.svg/46px-Flag_of_Washington.svg.png"
+  },
+  {
+    "state": "West Virginia",
+    "city": "West Virginia",
+    "flag": "2/22/Flag_of_West_Virginia.svg/46px-Flag_of_West_Virginia.svg.png"
+  },
+  {
+    "state": "Wisconsin",
+    "city": "Wisconsin",
+    "flag": "2/22/Flag_of_Wisconsin.svg/45px-Flag_of_Wisconsin.svg.png"
+  },
+  {
+    "state": "Wyoming",
+    "city": "Wyoming",
+    "flag": "b/bc/Flag_of_Wyoming.svg/43px-Flag_of_Wyoming.svg.png"
+  }
+]

@@ -1,0 +1,16 @@
+[
+{
+  "name": "home",
+  "view":{
+    "url": "/home",
+    "templateUrl": "app-js/components/home/home.html"
+  }
+},
+{
+  "name": "dashboard",
+  "view":{
+    "url": "/",
+    "templateUrl": "app-js/components/dashboard/dashboard.html"
+  }
+}
+]

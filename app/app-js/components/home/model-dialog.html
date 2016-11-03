@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <h3 class="modal-title">Select states and capital</h3>
+</div>
+<div class="modal-body">
+      <input type="text" 
+      ng-model="customSelected" 
+      placeholder="Type search text" 
+      uib-typeahead="stateNameArr as stateNameArr.state for stateNameArr in stateArr | filter:{state:$viewValue}"
+      typeahead-template-url="capitallabel.html"
+      typeahead-on-select="selectState(customSelected)"
+       class="form-control">
+</div>
+<div class="modal-footer">
+    <button class="btn btn-warning"
+    type="button"
+    ng-click="cancel()">Cancel</button>
+</div>
+<script type="text/ng-template" id="capitallabel.html">
+  <a>      
+      <span>{{match.model.state}} ({{match.model.city}})</span>
+      <span ng-bind-html="match.label"></span>
+  </a>
+</script>
