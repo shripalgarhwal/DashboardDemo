@@ -84,6 +84,22 @@ body {
   text-align: center;
   border-radius: 3px;
 }
+.box-danger{
+  background-color: #dd5b4b;
+  color: #ffffff;
+  border-radius: 4px;
+  height: 34px;
+  padding-top: 5px;
+  margin-top: 1px;
+}
+.box-success{
+  background-color: #5fbc27;
+  color: #ffffff;
+  border-radius: 4px;
+  height: 34px;
+  padding-top: 5px;
+  margin-top: 1px;
+}
 .success-alert{
   background-color: #5fbc27;
   width: 70%;
@@ -111,7 +127,10 @@ body {
   border-top: 1px solid #c3c3c3;
   background-color: #ffffff;
 }
-.fund-list ul>li>ul>li>div:first-child{
+//.fund-list ul>li>ul>li>div:first-child{
+//  padding-left: 50px;
+//}
+.fund-list ul>li>ul>li>div{
   padding-left: 50px;
 }
 .fund-list ul>li>ul>li>ul>li>div:first-child{
@@ -132,4 +151,13 @@ body {
 }
 .menu-border-bottom{
   border-bottom: 1px solid #cccccc; color: #687380;
+}
+.alert{
+  padding: 5px 5px 10px 5px;
+}
+.margin-5 {
+  margin: 5px;
+}
+.box-border{
+  border: 1px solid #cccccc; color: #687380;
 }

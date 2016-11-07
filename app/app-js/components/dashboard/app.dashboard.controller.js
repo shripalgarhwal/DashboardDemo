@@ -21,7 +21,9 @@
         vm.pieData = fundDataService.getPieChartData();
         vm.pieDataTitle = vm.titles[0];
         vm.chartOptions = fundDataService.getOptionsData();
-    	httpFactory.getData('json/funds.json')
+        vm.displayTimeStamp = displayTimeStamp();
+        vm.totalErrorInFunds = 0;
+    	httpFactory.getData('json/dataQuality.json')
         .success(function(data) {
         	vm.fundData = data;
         	vm.selectedFundFamilly = vm.fundData[0];
@@ -73,6 +75,7 @@
         	});
         }
         var totalCount = 0;
+
         function getTotalCount(funds, addInMissingObj) {
             var dataArray = [];
         	angular.forEach(vm.missingField, function(value, key) {
@@ -80,12 +83,16 @@
         		filterMissing(funds, key);
                 if(addInMissingObj) {
         		  vm.missingField[key] = totalCount;
+                  //totalError += totalCount;
                 }
                 dataArray.push({
                     name: key,
                     y: totalCount
                 });                
         	});
+            if(addInMissingObj) {
+                vm.totalErrorInFunds = totalErrorInFunds();
+            }
             return dataArray;
         }
         function filterMissing(arrayObj, field) {
@@ -111,6 +118,97 @@
 	        		}
         		}
         	});
-        }        
+        }
+        function totalErrorInFunds() {
+            var totalError = 0;
+            angular.forEach(vm.missingField, function(value, key) {
+                totalError += Number(vm.missingField[key]);
+            });
+            return totalError;
+        }
+        function displayTimeStamp() {
+            //return new Date('2016', '10', '25').toString();
+            return '2016-10-20 09:30:00 AM GMT';
+        }
+
+
+
+        //-------------new UI changes
+        vm.visibility = {
+            fund: {
+                visible: false,
+                error: {
+                    visible: false
+                },
+                warning: {
+                    visible: false
+                }
+            },
+            shareClass: {
+                visible: false,
+                error: {
+                    visible: false
+                },
+                warning: {
+                    visible: false
+                }
+            },
+            performance: {
+                visible: false,
+                error: {
+                    visible: false
+                },
+                warning: {
+                    visible: false
+                }
+            },
+            characteristics: {
+                visible: false,
+                error: {
+                    visible: false
+                },
+                warning: {
+                    visible: false
+                }
+            }
+        }
+        vm.toggleExpendParent = function(key) {
+            vm.visibility[key].visible = !vm.visibility[key].visible
+        }
+        vm.toggleExpendChildren = function(parentKey, Key) {
+            vm.visibility[parentKey][Key].visible = !vm.visibility[parentKey][Key].visible;
+        }
+        vm.getSysmbol = function(fund) {
+            if(!fund.children) {
+                return '';
+            }
+            if(fund.children.length < 1) {
+                return '';
+            }
+            if(fund.visible) {
+                return 'fa fa-minus-square';
+            } else {
+                return 'fa fa-plus-square'
+            }
+        }
+        vm.getSysmbolParent = function(key) {            
+            if(vm.visibility[key].visible) {
+                return 'fa fa-minus-square';
+            } else {
+                return 'fa fa-plus-square'
+            }
+        }
+        vm.getSysmbolForChild = function(parentKey, Key) {            
+            if(vm.visibility[parentKey][Key].visible) {
+                return 'fa fa-minus-square';
+            } else {
+                return 'fa fa-plus-square'
+            }
+        }
+        vm.detailVisible = false;
+        vm.viewErrorDetails = function() {
+            vm.detailVisible = !vm.detailVisible
+        }
+
     }       
 }());
