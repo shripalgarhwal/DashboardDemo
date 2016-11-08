@@ -3,8 +3,9 @@
 	<div class="col-md-12 menu-border-bottom">
 		<h4>Data Report Dashboard</h4>
 	</div>
-	<div class="col-md-12 menu-border-bottom" >
-		<div class="col-md-2 padding-none margin-none">
+	<div class="col-md-12 menu-border-bottom" 
+		ng-if="vm.detailVisible">
+		<!--<div class="col-md-2 padding-none margin-none">
 			<p class="margin-top-10"><b>Please Select AsOfDate: </b></p>
 		</div>
 		<div class="col-md-2 padding-none margin-none">
@@ -29,12 +30,12 @@
 		        	ng-repeat="family in vm.fundData"><a href="#" ng-click="vm.selectDate(family)">{{family.asOfDate}}</a></li>		        
 		      </ul>
 		    </div>
-		</div>
-		<div class="col-md-2 padding-none margin-none"
-			ng-if="vm.detailVisible">
+		</div>-->
+		<div class="col-md-1 padding-none margin-none"
+			>
 			<button
 				class="btn btn-primary margin-top-5"
-			 	ng-click="vm.viewErrorDetails()">Home</button>
+			 	ng-click="vm.viewErrorDetails()">Back</button>
 		</div>
 		<!--<div class="col-md-2 padding-none margin-none margin-top-5">
 			<label>Expend All:
@@ -59,6 +60,14 @@
 				</tr>
 			</table>
 		</div>-->
+		<div class="col-md-11">
+			<div class="col-md-4 margin-top-5"><b>Approved As At Date: {{vm.viewDetailAsOfDate.approveDate}}</b></div>
+			<div class="col-md-4 margin-top-5"><b>Most Recent As At Date: {{vm.viewDetailAsOfDate.recentDate}}</b></div>
+			<div class="col-md-2 margin-top-5 red-text"><b>Total Errors: {{vm.viewDetailAsOfDate.error}}</b></div>
+			<div class="col-md-2 margin-top-5 red-text"><b>Total Warnings: {{vm.viewDetailAsOfDate.warning}}</b></div>
+			
+		</div>
+
 	</div>
 	
 	<div  class="col-md-12 padding-none margin-none margin-top-5"
@@ -67,96 +76,369 @@
 			<div class="fund-list">
 				<ul style="width:100%;" class="padding-none margin-none">
 					<li class="col-md-12 padding-none margin-none height-35">
-			   			<div class="col-md-2 margin-top-5"><b>Data Category</b></div>
-		   				<div class="col-md-2 margin-top-5"><b>As Of Date</b></div>
-		   				<div class="col-md-3 margin-top-5"><b>Approved AsAtDate</b></div>
-		   				<div class="col-md-1 margin-top-5"><b> </b></div>
+			   			<div class="col-md-3 margin-top-5"><b>Data Category</b></div>
+		   				<div class="col-md-1 margin-top-5"><b>As Of Date</b></div>
+		   				<div class="col-md-2 margin-top-5"><b>Approved As At Date</b></div>
+		   				<div class="col-md-2 margin-top-5"><b>Most Recent As At Date</b></div>
 		   				<div class="col-md-4 margin-top-5"><b>Data Quality</b></div>
 		   				<!--<div class="col-md-2 margin-top-5"><b>ISIN</b></div>-->
 			   		</li>
-			   		<li ng-class="(vm.visibility.fund.visible)?' col-md-12 padding-none margin-none height-auto':'col-md-12 padding-none margin-none height-35'">
-			   			<div class="col-md-2 margin-top-5 height-30">
-			   				<!--<a href="" ng-click="vm.toggleExpendParent('fund')"><i ng-class="vm.getSysmbol('fund')" aria-hidden="true"></i></a>-->
-			   				<b>Fund</b>
-			   			</div>
-			   			<div class="col-md-2 margin-top-5 height-30">
-			   				{{vm.selected}}
-			   			</div>
+			   		<li class="col-md-12 padding-none margin-none height-35"
+			   			ng-repeat="dateData in vm.fundData track by $index">
 			   			<div class="col-md-3 margin-top-5 height-30">
-			   				{{vm.displayTimeStamp}}
+			   				<!--<a href="" ng-click="vm.toggleExpendParent('fund')"><i ng-class="vm.getSysmbol('fund')" aria-hidden="true"></i></a>-->
+			   				<b>Fund Data</b>
 			   			</div>
 			   			<div class="col-md-1 margin-top-5 height-30">
-			   				<b> </b>
+			   				{{dateData.asOfDate}}
 			   			</div>
-			   			<div class="col-md-4 box-danger">
-			   				<b>Data Quality:</b>
-			   				<span class="alert alert-danger">Error: {{vm.totalErrorInFunds}}</span>
-			   				<span class="alert alert-warning">Warnings: 0</span>
-			   				<span><button
-			   					class="btn btn-default"
-			   					style="padding: 0px 16px 0px 16px;"
-			   				 ng-click="vm.viewErrorDetails()">View Details</button></span>
+			   			<div class="col-md-2 margin-top-5 height-30">
+			   				{{dateData.approveDate}}
+			   			</div>
+			   			<div class="col-md-2 height-30">
+			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
+								<button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
+								{{dateData.recentDate}}<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+									<li role="menuitem"
+										ng-repeat="dateItem in dateData.recentDates">
+										<a href="#" ng-click="vm.selectRecentDate(dateData, dateItem)">{{dateItem.date}}</a></li>
+								</ul>
+						    </div>
+			   			</div>
+			   			<div ng-class="(dateData.error === 0 && dateData.warning === 0)?'col-md-4 box-success': 'col-md-4 box-danger'">
+			   				<div class="col-md-8 padding-none margin-none"
+			   					ng-if="(dateData.error === 0 && dateData.warning === 0)">
+			   					<b>Data Quality: No Error, Warnings</b>	
+			   				</div>
+			   				<div class="col-md-8 padding-none margin-none"
+			   					ng-if="(dateData.error !== 0 || dateData.warning !== 0)">
+				   				<b>Data Quality:</b>
+				   				<span 
+				   					title="Click to View Detail"
+				   					class="alert alert-danger mouse-p"
+				   					ng-click="vm.viewErrorDetails(dateData)">Errors: {{dateData.error}}</span>
+				   				<span 
+				   					title="Click to View Detail"
+				   					class="alert alert-warning mouse-p"
+				   					ng-click="vm.viewErrorDetails(dateData)">Warnings: {{dateData.warning}}</span>
+			   				</div>
+			   				<div class="col-md-4 padding-none margin-none"
+			   					ng-if="(dateData.recentDate !== dateData.approveDate)">
+				   				<button
+				   					class="btn btn-default"
+				   					style="padding: 0px 10px 0px 10px;"
+				   				 ng-click="vm.approveData(dateData, dateData.recentDate)">Approve</button>
+				   				 <!--<button
+				   					class="btn btn-default"
+				   					style="padding: 0px 10px 0px 10px;"
+				   				 ng-click="vm.viewErrorDetails()">Reject</button>-->
+			   				 </div>
 			   			</div>
 			   			
 			   		</li>
-			   		<li class="col-md-12 padding-none margin-none height-35">
+			   		<li class="col-md-12 padding-none margin-none height-35"
+			   			ng-repeat="items in vm.fundData[0].version">
+			   			<div class="col-md-3 margin-top-5 height-30">
+			   				<b>{{items.Name}}</b>
+			   			</div>
+			   			<div class="col-md-1 margin-top-5 height-30">
+			   				{{vm.fundData[0].asOfDate}}
+			   			</div>
+			   			<div class="col-md-2 margin-top-5 height-30">
+			   				{{items.approveDate}}
+			   			</div>
+			   			<div class="col-md-2 height-30">
+			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
+								<button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
+								{{items.recentDate}}<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+									<li role="menuitem"
+										ng-repeat="indexItem in items.recentDates">
+										<a href="#" ng-click="vm.selectRecentDate(items, indexItem)">{{indexItem.date}}</a></li>
+								</ul>
+						    </div>
+			   			</div>
+			   			<div ng-class="(items.error === 0 && items.warning === 0)?'col-md-4 box-success': 'col-md-4 box-danger'">
+			   				<div class="col-md-8 padding-none margin-none"
+			   					ng-if="(items.error === 0 && items.warning === 0)">
+			   					<b>Data Quality: No Error, Warnings</b>	
+			   				</div>
+			   				<div class="col-md-8 padding-none margin-none"
+			   					ng-if="items.error !== 0 || items.warning !== 0">
+				   				<b>Data Quality:</b>
+				   				<span 
+				   					title="Click to View Detail"
+				   					class="alert alert-danger mouse-p"
+				   					ng-click="vm.viewErrorDetails(items)">Errors: {{items.error}}</span>
+				   				<span 
+				   					title="Click to View Detail"
+				   					class="alert alert-warning mouse-p"
+				   					ng-click="vm.viewErrorDetails(items)">Warnings: {{items.warning}}</span>
+			   				</div>
+			   				<div class="col-md-4 padding-none margin-none"
+			   					ng-if="(items.recentDate !== items.approveDate)">
+				   				<button
+				   					class="btn btn-default"
+				   					style="padding: 0px 10px 0px 10px;"
+				   				 ng-click="vm.approveData(items, items.recentDate)">Approve</button>
+				   				 <!--<button
+				   					class="btn btn-default"
+				   					style="padding: 0px 10px 0px 10px;"
+				   				 ng-click="vm.viewErrorDetails()">Reject</button>-->
+			   				 </div>
+			   			</div>
+			   		</li>
+			   		<!--<li class="col-md-12 padding-none margin-none height-35">
 			   			<div class="col-md-2 margin-top-5 height-30">
 			   				<b>ShareClass</b>
 			   			</div>
-			   			<div class="col-md-2 margin-top-5 height-30">
+			   			<div class="col-md-1 margin-top-5 height-30">
 			   				{{vm.selected}}
 			   			</div>
-			   			<div class="col-md-3 margin-top-5 height-30">
+			   			<div class="col-md-2 margin-top-5 height-30">
 			   				{{vm.displayTimeStamp}}
 			   			</div>
-			   			<div class="col-md-1 margin-top-5 height-30">
-			   				<b> </b>
+			   			<div class="col-md-3 height-30">
+			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
+								<button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
+								Button dropdown<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+									<li role="menuitem">
+										<a href="#">{{vm.displayTimeStamp}}</a></li>
+									<li role="menuitem">
+										<a href="#">{{vm.displayTimeStamp}}</a></li>
+								</ul>
+						    </div>
 			   			</div>
 			   			<div class="col-md-4 box-danger"
 			   				>
-			   				<b>Data Quality:</b>
-			   				<span class="alert alert-danger">Error: {{vm.totalErrorInFunds}}</span>
-			   				<span class="alert alert-warning">Warnings: 0</span>
+			   				<div class="col-md-8 padding-none margin-none">
+				   				<b>Data Quality:</b>
+				   				<span 
+				   					title="Click to View Detail"
+				   					class="alert alert-danger mouse-p"
+				   					ng-click="vm.viewErrorDetails()">Error: {{vm.totalErrorInFunds}}</span>
+				   				<span 
+				   					title="Click to View Detail"
+				   					class="alert alert-warning mouse-p"
+				   					ng-click="vm.viewErrorDetails()">Warnings: 0</span>
+			   				</div>
+			   				<div class="col-md-4 padding-none margin-none">
+				   				<button
+				   					class="btn btn-default"
+				   					style="padding: 0px 10px 0px 10px;"
+				   				 ng-click="vm.viewErrorDetails()">Approve</button>
+				   				 <button
+				   					class="btn btn-default"
+				   					style="padding: 0px 10px 0px 10px;"
+				   				 ng-click="vm.viewErrorDetails()">Reject</button>
+			   				 </div>
 			   			</div>
 			   		</li>
 			   		<li class="col-md-12 padding-none margin-none height-35">
 			   			<div class="col-md-2 margin-top-5 height-30">
 			   				<b>Performance</b>
 			   			</div>
-			   			<div class="col-md-2 margin-top-5 height-30">
+			   			<div class="col-md-1 margin-top-5 height-30">
 			   				{{vm.selected}}
 			   			</div>
-			   			<div class="col-md-3 margin-top-5 height-30">
+			   			<div class="col-md-2 margin-top-5 height-30">
 			   				{{vm.displayTimeStamp}}
 			   			</div>
-			   			<div class="col-md-1 margin-top-5 height-30">
-			   				<b> </b>
+			   			<div class="col-md-3 height-30">
+			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
+								<button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
+								Button dropdown<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+									<li role="menuitem">
+										<a href="#">{{vm.displayTimeStamp}}</a></li>
+									<li role="menuitem">
+										<a href="#">{{vm.displayTimeStamp}}</a></li>
+								</ul>
+						    </div>
 			   			</div>
 			   			<div class="col-md-4 box-danger"
 			   				>
-			   				<b>Data Quality:</b>
-			   				<span class="alert alert-danger">Error: {{vm.totalErrorInFunds}}</span>
-			   				<span class="alert alert-warning">Warnings: 5</span>
+			   				<div class="col-md-8 padding-none margin-none">
+				   				<b>Data Quality:</b>
+				   				<span 
+				   					title="Click to View Detail"
+				   					class="alert alert-danger mouse-p"
+				   					ng-click="vm.viewErrorDetails()">Error: {{vm.totalErrorInFunds}}</span>
+				   				<span 
+				   					title="Click to View Detail"
+				   					class="alert alert-warning mouse-p"
+				   					ng-click="vm.viewErrorDetails()">Warnings: 5</span>
+				   			</div>
+			   				<div class="col-md-4 padding-none margin-none">
+				   				<button
+				   					class="btn btn-default"
+				   					style="padding: 0px 10px 0px 10px;"
+				   				 ng-click="vm.viewErrorDetails()">Approve</button>
+				   				 <button
+				   					class="btn btn-default"
+				   					style="padding: 0px 10px 0px 10px;"
+				   				 ng-click="vm.viewErrorDetails()">Reject</button>
+			   				 </div>
 			   			</div>
 			   		</li>
 			   		<li class="col-md-12 padding-none margin-none height-35">
 			   			<div class="col-md-2 margin-top-5 height-30">
 			   				<b>Charactristics</b>
 			   			</div>
-			   			<div class="col-md-2 margin-top-5 height-30">
+			   			<div class="col-md-1 margin-top-5 height-30">
 			   				{{vm.selected}}
 			   			</div>
-			   			<div class="col-md-3 margin-top-5 height-30">
+			   			<div class="col-md-2 margin-top-5 height-30">
 			   				{{vm.displayTimeStamp}}
 			   			</div>
+			   			<div class="col-md-3 height-30">
+			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
+								<button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
+								Button dropdown<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+									<li role="menuitem">
+										<a href="#">{{vm.displayTimeStamp}}</a></li>
+									<li role="menuitem">
+										<a href="#">{{vm.displayTimeStamp}}</a></li>
+								</ul>
+						    </div>
+			   			</div>
+			   			<div class="col-md-4 box-success"
+			   				>
+			   				<div class="col-md-8 padding-none margin-none">
+			   					<b>Data Quality: No Error, Warnings</b>	
+			   				</div>	
+			   				<div class="col-md-4 padding-none margin-none">
+				   				<button
+				   					class="btn btn-default"
+				   					style="padding: 0px 10px 0px 10px;"
+				   				 ng-click="vm.viewErrorDetails()">Approve</button>
+				   				 <button
+				   					class="btn btn-default"
+				   					style="padding: 0px 10px 0px 10px;"
+				   				 ng-click="vm.viewErrorDetails()">Reject</button>
+			   				 </div>	   				
+			   			</div>
+			   		</li>
+			   		<li class="col-md-12 padding-none margin-none height-35">
+			   			<div class="col-md-2 margin-top-5 height-30">
+			   				<b>Holdings</b>
+			   			</div>
 			   			<div class="col-md-1 margin-top-5 height-30">
-			   				<b> </b>
+			   				{{vm.selected}}
+			   			</div>
+			   			<div class="col-md-2 margin-top-5 height-30">
+			   				{{vm.displayTimeStamp}}
+			   			</div>
+			   			<div class="col-md-3 height-30">
+			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
+								<button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
+								Button dropdown<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+									<li role="menuitem">
+										<a href="#">{{vm.displayTimeStamp}}</a></li>
+									<li role="menuitem">
+										<a href="#">{{vm.displayTimeStamp}}</a></li>
+								</ul>
+						    </div>
+			   			</div>
+			   			<div class="col-md-4 box-success"
+			   				>
+			   				<b>Data Quality: No Error, Warnings</b>			   							   				
+			   			</div>
+			   		</li>
+			   		<li class="col-md-12 padding-none margin-none height-35">
+			   			<div class="col-md-2 margin-top-5 height-30">
+			   				<b>NAV</b>
+			   			</div>
+			   			<div class="col-md-1 margin-top-5 height-30">
+			   				{{vm.selected}}
+			   			</div>
+			   			<div class="col-md-2 margin-top-5 height-30">
+			   				{{vm.displayTimeStamp}}
+			   			</div>
+			   			<div class="col-md-3 height-30">
+			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
+								<button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
+								Button dropdown<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+									<li role="menuitem">
+										<a href="#">{{vm.displayTimeStamp}}</a></li>
+									<li role="menuitem">
+										<a href="#">{{vm.displayTimeStamp}}</a></li>
+								</ul>
+						    </div>
+			   			</div>
+			   			<div class="col-md-4 box-success"
+			   				>
+			   				<b>Data Quality: No Error, Warnings</b>
+			   			</div>
+			   		</li>
+			   		<li class="col-md-12 padding-none margin-none height-35">
+			   			<div class="col-md-2 margin-top-5 height-30">
+			   				<b>Distribution</b>
+			   			</div>
+			   			<div class="col-md-1 margin-top-5 height-30">
+			   				{{vm.selected}}
+			   			</div>
+			   			<div class="col-md-2 margin-top-5 height-30">
+			   				{{vm.displayTimeStamp}}
+			   			</div>
+			   			<div class="col-md-3 height-30">
+			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
+								<button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
+								Button dropdown<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+									<li role="menuitem">
+										<a href="#">{{vm.displayTimeStamp}}</a></li>
+									<li role="menuitem">
+										<a href="#">{{vm.displayTimeStamp}}</a></li>
+								</ul>
+						    </div>
 			   			</div>
 			   			<div class="col-md-4 box-success"
 			   				>
 			   				<b>Data Quality: No Error, Warnings</b>			   				
 			   			</div>
 			   		</li>
+			   		<li class="col-md-12 padding-none margin-none height-35">
+			   			<div class="col-md-2 margin-top-5 height-30">
+			   				<b>OneView Sheet - Fund Facts</b>
+			   			</div>
+			   			<div class="col-md-1 margin-top-5 height-30">
+			   				{{vm.selected}}
+			   			</div>
+			   			<div class="col-md-2 margin-top-5 height-30">
+			   				{{vm.displayTimeStamp}}
+			   			</div>
+			   			<div class="col-md-3 height-30">
+			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
+								<button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
+								Button dropdown<span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
+									<li role="menuitem">
+										<a href="#">{{vm.displayTimeStamp}}</a></li>
+									<li role="menuitem">
+										<a href="#">{{vm.displayTimeStamp}}</a></li>
+								</ul>
+						    </div>
+			   			</div>
+			   			<div class="col-md-4 box-success"
+			   				>
+			   				<b>Data Quality: No Error, Warnings</b>			   				
+			   			</div>
+			   		</li>-->
 				</ul>
 			</div>
 		</div>
@@ -187,7 +469,7 @@
 								   				<a href="" 
 								   					ng-click="vm.toggleExpendChildren('fund', 'error')">
 								   					<i ng-class="vm.getSysmbolForChild('fund', 'error')" aria-hidden="true"></i> </a>
-								   				<b>Error</b>
+								   				<b>Errors</b>
 								   			</div>
 								   			<div class="col-md-12 box-border"
 								   				ng-if="vm.visibility.fund.error.visible"> 
@@ -199,7 +481,7 @@
 								   						Domisile missing
 								   					</div>
 								   					<div class="col-md-3 alert alert-danger margin-5">
-								   						Fund Inception date missing
+								   						Fund inception date missing
 								   					</div>
 								   				</div>
 								   				<div  class="col-md-12">
@@ -207,10 +489,7 @@
 								   						Since inception date missing
 								   					</div>
 								   					<div class="col-md-3 alert alert-danger margin-5">
-								   						ISIN
-								   					</div>
-								   					<div class="col-md-3 alert alert-danger margin-5">
-								   						Ref ID
+								   						ISIN missing
 								   					</div>
 								   				</div>
 								   			</div>
@@ -221,7 +500,7 @@
 					   						<div class="col-md-2 margin-top-5 height-30">
 								   				<a href="" 
 								   					ng-click="vm.toggleExpendChildren('fund', 'warning')"><i ng-class="vm.getSysmbolForChild('fund', 'warning')" aria-hidden="true"></i> </a>
-								   				<b>Warning</b>
+								   				<b>Warnings</b>
 								   			</div>
 								   			<div class="col-md-12 box-border"
 								   				ng-if="vm.visibility.fund.warning.visible"> 
@@ -230,7 +509,7 @@
 								   						Country Code Missing
 								   					</div>
 								   					<div class="col-md-3 alert alert-warning margin-5">
-								   						M Start Rating Negative
+								   						Start Rating Negative
 								   					</div>
 								   					<div class="col-md-3 alert alert-warning margin-5">
 								   						Fund Asset Date Missing
@@ -238,7 +517,7 @@
 								   				</div>
 								   				<div  class="col-md-12">
 								   					<div class="col-md-3 alert alert-warning margin-5">
-								   						Share Class Currency Invalid ISO
+								   						Share Class currency invalid ISO code
 								   					</div>
 								   					
 								   				</div>

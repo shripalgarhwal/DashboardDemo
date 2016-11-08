@@ -128,12 +128,13 @@
         }
         function displayTimeStamp() {
             //return new Date('2016', '10', '25').toString();
-            return '2016-10-20 09:30:00 AM GMT';
+            return '2016-10-20 09:30 AM';
         }
 
 
 
         //-------------new UI changes
+        vm.viewDetailAsOfDate = {};
         vm.visibility = {
             fund: {
                 visible: false,
@@ -172,9 +173,9 @@
                 }
             }
         }
-        vm.toggleExpendParent = function(key) {
-            vm.visibility[key].visible = !vm.visibility[key].visible
-        }
+        //vm.toggleExpendParent = function(key) {
+        //    vm.visibility[key].visible = !vm.visibility[key].visible
+        //}
         vm.toggleExpendChildren = function(parentKey, Key) {
             vm.visibility[parentKey][Key].visible = !vm.visibility[parentKey][Key].visible;
         }
@@ -191,13 +192,13 @@
                 return 'fa fa-plus-square'
             }
         }
-        vm.getSysmbolParent = function(key) {            
+        /*vm.getSysmbolParent = function(key) {            
             if(vm.visibility[key].visible) {
                 return 'fa fa-minus-square';
             } else {
                 return 'fa fa-plus-square'
             }
-        }
+        }*/
         vm.getSysmbolForChild = function(parentKey, Key) {            
             if(vm.visibility[parentKey][Key].visible) {
                 return 'fa fa-minus-square';
@@ -206,8 +207,25 @@
             }
         }
         vm.detailVisible = false;
-        vm.viewErrorDetails = function() {
+        vm.viewErrorDetails = function(asOfDate) {
+            vm.viewDetailAsOfDate = asOfDate;
             vm.detailVisible = !vm.detailVisible
+        }
+        vm.selectRecentDate = function(items, recentDateItem) {
+            items.recentDate = recentDateItem.date
+            items.error = recentDateItem.error;
+            items.warning = recentDateItem.warning;
+        }
+        vm.approveData = function(items, recentDate) {
+            items.approveDate = recentDate;
+            items.error = 0;
+            items.warning = 0;
+            angular.forEach(items.recentDates, function(item, key) {
+                if(item.date === recentDate) {
+                    item.error = 0;
+                    item.warning = 0;
+                }
+            });
         }
 
     }       
