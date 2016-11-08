@@ -4,11 +4,13 @@
 		<h4>Data Report Dashboard</h4>
 	</div>
 	<div class="col-md-12 menu-border-bottom" 
-		ng-if="vm.detailVisible">
-		<!--<div class="col-md-2 padding-none margin-none">
+		>
+		<div class="col-md-2 padding-none margin-none"
+			ng-if="!vm.detailVisible">
 			<p class="margin-top-10"><b>Please Select AsOfDate: </b></p>
 		</div>
-		<div class="col-md-2 padding-none margin-none">
+		<div class="col-md-2 padding-none margin-none"
+			ng-if="!vm.detailVisible">
 			<div class="btn-group margin-5" 
 				uib-dropdown is-open="status.isopen"
 				style="width:200px;">
@@ -30,9 +32,9 @@
 		        	ng-repeat="family in vm.fundData"><a href="#" ng-click="vm.selectDate(family)">{{family.asOfDate}}</a></li>		        
 		      </ul>
 		    </div>
-		</div>-->
+		</div>
 		<div class="col-md-1 padding-none margin-none"
-			>
+			ng-if="vm.detailVisible">
 			<button
 				class="btn btn-primary margin-top-5"
 			 	ng-click="vm.viewErrorDetails()">Back</button>
@@ -60,7 +62,8 @@
 				</tr>
 			</table>
 		</div>-->
-		<div class="col-md-11">
+		<div class="col-md-11"
+			ng-if="vm.detailVisible">
 			<div class="col-md-4 margin-top-5"><b>Approved As At Date: {{vm.viewDetailAsOfDate.approveDate}}</b></div>
 			<div class="col-md-4 margin-top-5"><b>Most Recent As At Date: {{vm.viewDetailAsOfDate.recentDate}}</b></div>
 			<div class="col-md-2 margin-top-5 red-text"><b>Total Errors: {{vm.viewDetailAsOfDate.error}}</b></div>
@@ -83,53 +86,52 @@
 		   				<div class="col-md-4 margin-top-5"><b>Data Quality</b></div>
 		   				<!--<div class="col-md-2 margin-top-5"><b>ISIN</b></div>-->
 			   		</li>
-			   		<li class="col-md-12 padding-none margin-none height-35"
-			   			ng-repeat="dateData in vm.fundData track by $index">
+			   		<li class="col-md-12 padding-none margin-none height-35">
 			   			<div class="col-md-3 margin-top-5 height-30">
 			   				<!--<a href="" ng-click="vm.toggleExpendParent('fund')"><i ng-class="vm.getSysmbol('fund')" aria-hidden="true"></i></a>-->
 			   				<b>Fund Data</b>
 			   			</div>
 			   			<div class="col-md-1 margin-top-5 height-30">
-			   				{{dateData.asOfDate}}
+			   				{{vm.selectedFundFamilly.asOfDate}}
 			   			</div>
 			   			<div class="col-md-2 margin-top-5 height-30">
-			   				{{dateData.approveDate}}
+			   				{{vm.selectedFundFamilly.approveDate}}
 			   			</div>
 			   			<div class="col-md-2 height-30">
 			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
 								<button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
-								{{dateData.recentDate}}<span class="caret"></span>
+								{{vm.selectedFundFamilly.recentDate}}<span class="caret"></span>
 								</button>
 								<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
 									<li role="menuitem"
-										ng-repeat="dateItem in dateData.recentDates">
-										<a href="#" ng-click="vm.selectRecentDate(dateData, dateItem)">{{dateItem.date}}</a></li>
+										ng-repeat="dateItem in vm.selectedFundFamilly.recentDates">
+										<a href="#" ng-click="vm.selectRecentDate(vm.selectedFundFamilly, dateItem)">{{dateItem.date}}</a></li>
 								</ul>
 						    </div>
 			   			</div>
-			   			<div ng-class="(dateData.error === 0 && dateData.warning === 0)?'col-md-4 box-success': 'col-md-4 box-danger'">
+			   			<div ng-class="(vm.selectedFundFamilly.error === 0 && vm.selectedFundFamilly.warning === 0)?'col-md-4 box-success': 'col-md-4 box-danger'">
 			   				<div class="col-md-8 padding-none margin-none"
-			   					ng-if="(dateData.error === 0 && dateData.warning === 0)">
+			   					ng-if="(vm.selectedFundFamilly.error === 0 && vm.selectedFundFamilly.warning === 0)">
 			   					<b>Data Quality: No Error, Warnings</b>	
 			   				</div>
 			   				<div class="col-md-8 padding-none margin-none"
-			   					ng-if="(dateData.error !== 0 || dateData.warning !== 0)">
+			   					ng-if="(vm.selectedFundFamilly.error !== 0 || vm.selectedFundFamilly.warning !== 0)">
 				   				<b>Data Quality:</b>
 				   				<span 
 				   					title="Click to View Detail"
 				   					class="alert alert-danger mouse-p"
-				   					ng-click="vm.viewErrorDetails(dateData)">Errors: {{dateData.error}}</span>
+				   					ng-click="vm.viewErrorDetails(vm.selectedFundFamilly)">Errors: {{dateData.error}}</span>
 				   				<span 
 				   					title="Click to View Detail"
 				   					class="alert alert-warning mouse-p"
-				   					ng-click="vm.viewErrorDetails(dateData)">Warnings: {{dateData.warning}}</span>
+				   					ng-click="vm.viewErrorDetails(vm.selectedFundFamilly)">Warnings: {{dateData.warning}}</span>
 			   				</div>
 			   				<div class="col-md-4 padding-none margin-none"
-			   					ng-if="(dateData.recentDate !== dateData.approveDate)">
+			   					ng-if="(vm.selectedFundFamilly.recentDate !== vm.selectedFundFamilly.approveDate)">
 				   				<button
 				   					class="btn btn-default"
 				   					style="padding: 0px 10px 0px 10px;"
-				   				 ng-click="vm.approveData(dateData, dateData.recentDate)">Approve</button>
+				   				 ng-click="vm.approveData(vm.selectedFundFamilly, vm.selectedFundFamilly.recentDate)">Approve</button>
 				   				 <!--<button
 				   					class="btn btn-default"
 				   					style="padding: 0px 10px 0px 10px;"
@@ -139,7 +141,7 @@
 			   			
 			   		</li>
 			   		<li class="col-md-12 padding-none margin-none height-35"
-			   			ng-repeat="items in vm.fundData[0].version">
+			   			ng-repeat="items in vm.selectedFundFamilly.version">
 			   			<div class="col-md-3 margin-top-5 height-30">
 			   				<b>{{items.Name}}</b>
 			   			</div>
@@ -190,255 +192,7 @@
 				   				 ng-click="vm.viewErrorDetails()">Reject</button>-->
 			   				 </div>
 			   			</div>
-			   		</li>
-			   		<!--<li class="col-md-12 padding-none margin-none height-35">
-			   			<div class="col-md-2 margin-top-5 height-30">
-			   				<b>ShareClass</b>
-			   			</div>
-			   			<div class="col-md-1 margin-top-5 height-30">
-			   				{{vm.selected}}
-			   			</div>
-			   			<div class="col-md-2 margin-top-5 height-30">
-			   				{{vm.displayTimeStamp}}
-			   			</div>
-			   			<div class="col-md-3 height-30">
-			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
-								<button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
-								Button dropdown<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-									<li role="menuitem">
-										<a href="#">{{vm.displayTimeStamp}}</a></li>
-									<li role="menuitem">
-										<a href="#">{{vm.displayTimeStamp}}</a></li>
-								</ul>
-						    </div>
-			   			</div>
-			   			<div class="col-md-4 box-danger"
-			   				>
-			   				<div class="col-md-8 padding-none margin-none">
-				   				<b>Data Quality:</b>
-				   				<span 
-				   					title="Click to View Detail"
-				   					class="alert alert-danger mouse-p"
-				   					ng-click="vm.viewErrorDetails()">Error: {{vm.totalErrorInFunds}}</span>
-				   				<span 
-				   					title="Click to View Detail"
-				   					class="alert alert-warning mouse-p"
-				   					ng-click="vm.viewErrorDetails()">Warnings: 0</span>
-			   				</div>
-			   				<div class="col-md-4 padding-none margin-none">
-				   				<button
-				   					class="btn btn-default"
-				   					style="padding: 0px 10px 0px 10px;"
-				   				 ng-click="vm.viewErrorDetails()">Approve</button>
-				   				 <button
-				   					class="btn btn-default"
-				   					style="padding: 0px 10px 0px 10px;"
-				   				 ng-click="vm.viewErrorDetails()">Reject</button>
-			   				 </div>
-			   			</div>
-			   		</li>
-			   		<li class="col-md-12 padding-none margin-none height-35">
-			   			<div class="col-md-2 margin-top-5 height-30">
-			   				<b>Performance</b>
-			   			</div>
-			   			<div class="col-md-1 margin-top-5 height-30">
-			   				{{vm.selected}}
-			   			</div>
-			   			<div class="col-md-2 margin-top-5 height-30">
-			   				{{vm.displayTimeStamp}}
-			   			</div>
-			   			<div class="col-md-3 height-30">
-			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
-								<button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
-								Button dropdown<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-									<li role="menuitem">
-										<a href="#">{{vm.displayTimeStamp}}</a></li>
-									<li role="menuitem">
-										<a href="#">{{vm.displayTimeStamp}}</a></li>
-								</ul>
-						    </div>
-			   			</div>
-			   			<div class="col-md-4 box-danger"
-			   				>
-			   				<div class="col-md-8 padding-none margin-none">
-				   				<b>Data Quality:</b>
-				   				<span 
-				   					title="Click to View Detail"
-				   					class="alert alert-danger mouse-p"
-				   					ng-click="vm.viewErrorDetails()">Error: {{vm.totalErrorInFunds}}</span>
-				   				<span 
-				   					title="Click to View Detail"
-				   					class="alert alert-warning mouse-p"
-				   					ng-click="vm.viewErrorDetails()">Warnings: 5</span>
-				   			</div>
-			   				<div class="col-md-4 padding-none margin-none">
-				   				<button
-				   					class="btn btn-default"
-				   					style="padding: 0px 10px 0px 10px;"
-				   				 ng-click="vm.viewErrorDetails()">Approve</button>
-				   				 <button
-				   					class="btn btn-default"
-				   					style="padding: 0px 10px 0px 10px;"
-				   				 ng-click="vm.viewErrorDetails()">Reject</button>
-			   				 </div>
-			   			</div>
-			   		</li>
-			   		<li class="col-md-12 padding-none margin-none height-35">
-			   			<div class="col-md-2 margin-top-5 height-30">
-			   				<b>Charactristics</b>
-			   			</div>
-			   			<div class="col-md-1 margin-top-5 height-30">
-			   				{{vm.selected}}
-			   			</div>
-			   			<div class="col-md-2 margin-top-5 height-30">
-			   				{{vm.displayTimeStamp}}
-			   			</div>
-			   			<div class="col-md-3 height-30">
-			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
-								<button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
-								Button dropdown<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-									<li role="menuitem">
-										<a href="#">{{vm.displayTimeStamp}}</a></li>
-									<li role="menuitem">
-										<a href="#">{{vm.displayTimeStamp}}</a></li>
-								</ul>
-						    </div>
-			   			</div>
-			   			<div class="col-md-4 box-success"
-			   				>
-			   				<div class="col-md-8 padding-none margin-none">
-			   					<b>Data Quality: No Error, Warnings</b>	
-			   				</div>	
-			   				<div class="col-md-4 padding-none margin-none">
-				   				<button
-				   					class="btn btn-default"
-				   					style="padding: 0px 10px 0px 10px;"
-				   				 ng-click="vm.viewErrorDetails()">Approve</button>
-				   				 <button
-				   					class="btn btn-default"
-				   					style="padding: 0px 10px 0px 10px;"
-				   				 ng-click="vm.viewErrorDetails()">Reject</button>
-			   				 </div>	   				
-			   			</div>
-			   		</li>
-			   		<li class="col-md-12 padding-none margin-none height-35">
-			   			<div class="col-md-2 margin-top-5 height-30">
-			   				<b>Holdings</b>
-			   			</div>
-			   			<div class="col-md-1 margin-top-5 height-30">
-			   				{{vm.selected}}
-			   			</div>
-			   			<div class="col-md-2 margin-top-5 height-30">
-			   				{{vm.displayTimeStamp}}
-			   			</div>
-			   			<div class="col-md-3 height-30">
-			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
-								<button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
-								Button dropdown<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-									<li role="menuitem">
-										<a href="#">{{vm.displayTimeStamp}}</a></li>
-									<li role="menuitem">
-										<a href="#">{{vm.displayTimeStamp}}</a></li>
-								</ul>
-						    </div>
-			   			</div>
-			   			<div class="col-md-4 box-success"
-			   				>
-			   				<b>Data Quality: No Error, Warnings</b>			   							   				
-			   			</div>
-			   		</li>
-			   		<li class="col-md-12 padding-none margin-none height-35">
-			   			<div class="col-md-2 margin-top-5 height-30">
-			   				<b>NAV</b>
-			   			</div>
-			   			<div class="col-md-1 margin-top-5 height-30">
-			   				{{vm.selected}}
-			   			</div>
-			   			<div class="col-md-2 margin-top-5 height-30">
-			   				{{vm.displayTimeStamp}}
-			   			</div>
-			   			<div class="col-md-3 height-30">
-			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
-								<button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
-								Button dropdown<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-									<li role="menuitem">
-										<a href="#">{{vm.displayTimeStamp}}</a></li>
-									<li role="menuitem">
-										<a href="#">{{vm.displayTimeStamp}}</a></li>
-								</ul>
-						    </div>
-			   			</div>
-			   			<div class="col-md-4 box-success"
-			   				>
-			   				<b>Data Quality: No Error, Warnings</b>
-			   			</div>
-			   		</li>
-			   		<li class="col-md-12 padding-none margin-none height-35">
-			   			<div class="col-md-2 margin-top-5 height-30">
-			   				<b>Distribution</b>
-			   			</div>
-			   			<div class="col-md-1 margin-top-5 height-30">
-			   				{{vm.selected}}
-			   			</div>
-			   			<div class="col-md-2 margin-top-5 height-30">
-			   				{{vm.displayTimeStamp}}
-			   			</div>
-			   			<div class="col-md-3 height-30">
-			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
-								<button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
-								Button dropdown<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-									<li role="menuitem">
-										<a href="#">{{vm.displayTimeStamp}}</a></li>
-									<li role="menuitem">
-										<a href="#">{{vm.displayTimeStamp}}</a></li>
-								</ul>
-						    </div>
-			   			</div>
-			   			<div class="col-md-4 box-success"
-			   				>
-			   				<b>Data Quality: No Error, Warnings</b>			   				
-			   			</div>
-			   		</li>
-			   		<li class="col-md-12 padding-none margin-none height-35">
-			   			<div class="col-md-2 margin-top-5 height-30">
-			   				<b>OneView Sheet - Fund Facts</b>
-			   			</div>
-			   			<div class="col-md-1 margin-top-5 height-30">
-			   				{{vm.selected}}
-			   			</div>
-			   			<div class="col-md-2 margin-top-5 height-30">
-			   				{{vm.displayTimeStamp}}
-			   			</div>
-			   			<div class="col-md-3 height-30">
-			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
-								<button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
-								Button dropdown<span class="caret"></span>
-								</button>
-								<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
-									<li role="menuitem">
-										<a href="#">{{vm.displayTimeStamp}}</a></li>
-									<li role="menuitem">
-										<a href="#">{{vm.displayTimeStamp}}</a></li>
-								</ul>
-						    </div>
-			   			</div>
-			   			<div class="col-md-4 box-success"
-			   				>
-			   				<b>Data Quality: No Error, Warnings</b>			   				
-			   			</div>
-			   		</li>-->
+			   		</li>			   		
 				</ul>
 			</div>
 		</div>

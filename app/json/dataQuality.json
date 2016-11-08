@@ -342,12 +342,125 @@
     "warning": 10,
     "version": {      
       "performance": {
-        "Name": "Performance"
+        "Name": "Performance",
+        "recentDate": "2016-11-08 10:10 AM",
+        "approveDate": "2016-11-07 9:10 AM",
+        "recentDates": [
+            {
+              "error": 11,
+              "warning": 0,
+              "date":"2016-11-08 10:10 AM"
+            },
+            {
+              "error": 5,
+              "warning": 10,
+              "date":"2016-11-08 06:10 AM"
+            },
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-07 10:10 AM"
+            }
+        ],
+        "error": 11,
+        "warning": 0
       },
       "characteristics": {
-        "Name": "Characteristics"
+        "Name": "Characteristics",
+        "recentDate": "2016-11-08 10:10 AM",
+        "approveDate": "2016-11-07 9:10 AM",
+        "recentDates": [
+            {
+              "error": 10,
+              "warning": 5,
+              "date":"2016-11-08 10:10 AM"
+            },
+            {
+              "error": 3,
+              "warning": 4,
+              "date":"2016-11-08 06:10 AM"
+            },
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-07 9:10 AM"
+            }
+        ],
+        "error": 10,
+        "warning": 5
       },
-      "funds": []
+      "shareClass": {
+        "Name": "Share Class",
+        "approveDate": "2016-11-07 9:10 AM",
+        "recentDate": "2016-11-08 10:10 AM",
+        "recentDates": [
+            {
+              "error": 15,
+              "warning": 6,
+              "date":"2016-11-08 10:10 AM"
+            },
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-08 06:10 AM"
+            },
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-07 9:10 AM"
+            }
+        ],
+        "error": 15,
+        "warning": 6
+      },
+      "nav": {
+        "Name": "NAV",
+        "recentDate": "2016-11-08 10:10 AM",
+        "approveDate": "2016-11-07 9:10 AM",
+        "recentDates": [
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-08 10:10 AM"
+            },
+            {
+              "error": 6,
+              "warning": 2,
+              "date":"2016-11-08 06:10 AM"
+            },
+            {
+              "error": 5,
+              "warning": 10,
+              "date":"2016-11-07 10:10 AM"
+            }
+          ],
+        "error": 0,
+        "warning": 0
+      },
+      "holdings": {
+        "Name": "Holdings",
+        "recentDate": "2016-11-08 10:10 AM",
+        "approveDate": "2016-11-08 10:10 AM",
+        "recentDates": [
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-08 10:10 AM"
+            },
+            {
+              "error": 11,
+              "warning": 2,
+              "date":"2016-11-08 06:10 AM"
+            },
+            {
+              "error": 0,
+              "warning": 10,
+              "date":"2016-11-07 10:10 AM"
+            }
+          ],
+        "error": 0,
+        "warning": 0
+      }
     }, 
     "funds": [
       {
@@ -436,14 +549,79 @@
     ],
     "error": 10,
     "warning": 8,
-    "version": {
+    "version": {      
       "performance": {
-        "Name": "Performance"
+        "Name": "Performance",
+        "recentDate": "2016-11-08 10:10 AM",
+        "approveDate": "2016-11-07 9:10 AM",
+        "recentDates": [
+            {
+              "error": 11,
+              "warning": 0,
+              "date":"2016-11-08 10:10 AM"
+            },
+            {
+              "error": 5,
+              "warning": 10,
+              "date":"2016-11-08 06:10 AM"
+            },
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-07 10:10 AM"
+            }
+        ],
+        "error": 11,
+        "warning": 0
       },
       "characteristics": {
-        "Name": "Characteristics"
+        "Name": "Characteristics",
+        "recentDate": "2016-11-08 10:10 AM",
+        "approveDate": "2016-11-07 9:10 AM",
+        "recentDates": [
+            {
+              "error": 10,
+              "warning": 5,
+              "date":"2016-11-08 10:10 AM"
+            },
+            {
+              "error": 3,
+              "warning": 4,
+              "date":"2016-11-08 06:10 AM"
+            },
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-07 9:10 AM"
+            }
+        ],
+        "error": 10,
+        "warning": 5
       },
-      "funds": []
+      "shareClass": {
+        "Name": "Share Class",
+        "approveDate": "2016-11-07 9:10 AM",
+        "recentDate": "2016-11-08 10:10 AM",
+        "recentDates": [
+            {
+              "error": 15,
+              "warning": 6,
+              "date":"2016-11-08 10:10 AM"
+            },
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-08 06:10 AM"
+            },
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-07 9:10 AM"
+            }
+        ],
+        "error": 15,
+        "warning": 6
+      }
     },
     "funds": [
       {
