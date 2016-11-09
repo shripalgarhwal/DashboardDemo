@@ -79,16 +79,16 @@
 			<div class="fund-list">
 				<ul style="width:100%;" class="padding-none margin-none">
 					<li class="col-md-12 padding-none margin-none height-35">
-			   			<div class="col-md-3 margin-top-5"><b>Data Category</b></div>
+			   			<div class="col-md-2 margin-top-5"><b>Data Category</b></div>
 		   				<div class="col-md-1 margin-top-5"><b>As Of Date</b></div>
 		   				<div class="col-md-2 margin-top-5"><b>Approved As At Date</b></div>
+		   				<div class="col-md-1 padding-none margin-top-5"><b>Approved By</b></div>
 		   				<div class="col-md-2 margin-top-5"><b>Most Recent As At Date</b></div>
 		   				<div class="col-md-4 margin-top-5"><b>Data Quality</b></div>
 		   				<!--<div class="col-md-2 margin-top-5"><b>ISIN</b></div>-->
 			   		</li>
-			   		<li class="col-md-12 padding-none margin-none height-35">
-			   			<div class="col-md-3 margin-top-5 height-30">
-			   				<!--<a href="" ng-click="vm.toggleExpendParent('fund')"><i ng-class="vm.getSysmbol('fund')" aria-hidden="true"></i></a>-->
+			   		<!--<li class="col-md-12 padding-none margin-none height-35">
+			   			<div class="col-md-2 margin-top-5 height-30">	   				
 			   				<b>Fund Data</b>
 			   			</div>
 			   			<div class="col-md-1 margin-top-5 height-30">
@@ -96,6 +96,9 @@
 			   			</div>
 			   			<div class="col-md-2 margin-top-5 height-30">
 			   				{{vm.selectedFundFamilly.approveDate}}
+			   			</div>
+			   			<div class="col-md-1 padding-none margin-top-5 height-30">
+			   				GARSS
 			   			</div>
 			   			<div class="col-md-2 height-30">
 			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
@@ -120,11 +123,11 @@
 				   				<span 
 				   					title="Click to View Detail"
 				   					class="alert alert-danger mouse-p"
-				   					ng-click="vm.viewErrorDetails(vm.selectedFundFamilly)">Errors: {{dateData.error}}</span>
+				   					ng-click="vm.viewErrorDetails(vm.selectedFundFamilly)">Errors: {{vm.selectedFundFamilly.error}}</span>
 				   				<span 
 				   					title="Click to View Detail"
 				   					class="alert alert-warning mouse-p"
-				   					ng-click="vm.viewErrorDetails(vm.selectedFundFamilly)">Warnings: {{dateData.warning}}</span>
+				   					ng-click="vm.viewErrorDetails(vm.selectedFundFamilly)">Warnings: {{vm.selectedFundFamilly.warning}}</span>
 			   				</div>
 			   				<div class="col-md-4 padding-none margin-none"
 			   					ng-if="(vm.selectedFundFamilly.recentDate !== vm.selectedFundFamilly.approveDate)">
@@ -132,17 +135,14 @@
 				   					class="btn btn-default"
 				   					style="padding: 0px 10px 0px 10px;"
 				   				 ng-click="vm.approveData(vm.selectedFundFamilly, vm.selectedFundFamilly.recentDate)">Approve</button>
-				   				 <!--<button
-				   					class="btn btn-default"
-				   					style="padding: 0px 10px 0px 10px;"
-				   				 ng-click="vm.viewErrorDetails()">Reject</button>-->
+				   				 
 			   				 </div>
 			   			</div>
 			   			
-			   		</li>
+			   		</li>-->
 			   		<li class="col-md-12 padding-none margin-none height-35"
 			   			ng-repeat="items in vm.selectedFundFamilly.version">
-			   			<div class="col-md-3 margin-top-5 height-30">
+			   			<div class="col-md-2 margin-top-5 height-30">
 			   				<b>{{items.Name}}</b>
 			   			</div>
 			   			<div class="col-md-1 margin-top-5 height-30">
@@ -150,6 +150,9 @@
 			   			</div>
 			   			<div class="col-md-2 margin-top-5 height-30">
 			   				{{items.approveDate}}
+			   			</div>
+			   			<div class="col-md-1 padding-none margin-top-5 height-30">
+			   				GARSS
 			   			</div>
 			   			<div class="col-md-2 height-30">
 			   				<div class="btn-group" uib-dropdown is-open="status.isopen">

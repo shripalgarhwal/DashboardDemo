@@ -23,7 +23,31 @@
       ],
     "error": 15,
     "warning": 5,
-    "version": {      
+    "version": {
+      "fund": {
+        "Name": "Fund Data",
+        "approveDate": "2016-11-07 9:10 AM",
+        "recentDate": "2016-11-08 10:10 AM",
+        "recentDates": [
+              {
+                "error": 15,
+                "warning": 5,
+                "date":"2016-11-08 10:10 AM"
+              },
+              {
+                "error": 5,
+                "warning": 10,
+                "date":"2016-11-08 06:10 AM"
+              },
+              {
+                "error": 0,
+                "warning": 0,
+                "date":"2016-11-07 9:10 AM"
+              }
+          ],
+        "error": 15,
+        "warning": 5
+      },
       "performance": {
         "Name": "Performance",
         "recentDate": "2016-11-08 10:10 AM",
@@ -99,7 +123,7 @@
       "nav": {
         "Name": "NAV",
         "recentDate": "2016-11-08 10:10 AM",
-        "approveDate": "2016-11-07 9:10 AM",
+        "approveDate": "2016-11-08 10:10 AM",
         "recentDates": [
             {
               "error": 0,
@@ -340,7 +364,31 @@
       ],
     "error": 6,
     "warning": 10,
-    "version": {      
+    "version": {
+      "fund": {
+        "Name": "Fund Data",
+        "approveDate": "2016-11-06 8:15 AM",
+        "recentDate": "2016-11-07 10:15 AM",
+        "recentDates": [
+            {
+              "error": 6,
+              "warning": 10,
+              "date":"2016-11-07 10:15 AM"
+            },
+            {
+              "error": 5,
+              "warning": 10,
+              "date":"2016-11-06 09:15 AM"
+            },
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-06 8:15 AM"
+            }
+          ],
+        "error": 6,
+        "warning": 10
+      },
       "performance": {
         "Name": "Performance",
         "recentDate": "2016-11-08 10:10 AM",
@@ -549,7 +597,31 @@
     ],
     "error": 10,
     "warning": 8,
-    "version": {      
+    "version": {
+      "fund": {
+        "Name": "Fund Data",
+        "approveDate": "2016-11-04 10:20 AM",
+        "recentDate": "2016-11-05 11:10 AM",
+        "recentDates": [
+            {
+              "error": 10,
+              "warning": 8,
+              "date":"2016-11-05 11:10 AM"
+            },
+            {
+              "error": 5,
+              "warning": 10,
+              "date":"2016-11-04 11:10 AM"
+            },
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-04 10:20 AM"
+            }
+        ],
+        "error": 10,
+        "warning": 8
+      },
       "performance": {
         "Name": "Performance",
         "recentDate": "2016-11-08 10:10 AM",
