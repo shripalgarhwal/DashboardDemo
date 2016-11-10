@@ -28,6 +28,7 @@
         "Name": "Fund Data",
         "approveDate": "2016-11-07 9:10 AM",
         "recentDate": "2016-11-08 10:10 AM",
+        "user": "GARSS",
         "recentDates": [
               {
                 "error": 15,
@@ -69,6 +70,7 @@
               "date":"2016-11-07 10:10 AM"
             }
         ],
+        "user": "GARSS",
         "error": 11,
         "warning": 0
       },
@@ -93,6 +95,7 @@
               "date":"2016-11-07 9:10 AM"
             }
         ],
+        "user": "GARSS",
         "error": 10,
         "warning": 5
       },
@@ -117,6 +120,7 @@
               "date":"2016-11-07 9:10 AM"
             }
         ],
+        "user": "GARSS",
         "error": 15,
         "warning": 6
       },
@@ -141,6 +145,7 @@
               "date":"2016-11-07 10:10 AM"
             }
           ],
+        "user": "GARSS",
         "error": 0,
         "warning": 0
       },
@@ -165,6 +170,7 @@
               "date":"2016-11-07 10:10 AM"
             }
           ],
+        "user": "GARSS",
         "error": 0,
         "warning": 0
       },
@@ -189,6 +195,7 @@
               "date":"2016-11-07 10:10 AM"
             }
         ],
+        "user": "GARSS",
         "error": 0,
         "warning": 0
       },
@@ -213,20 +220,20 @@
               "date":"2016-11-07 10:10 AM"
             }
         ],
+        "user": "GARSS",
         "error": 0,
         "warning": 0
       }
     },    
     "funds": [
       {
-        "Name": "3456",
+        "Name": "WMF Global Bond (IE) 12371",
         "currency": "",
         "coreHoldingID": "567",
         "poe": "65",
         "nav": "677",
         "isin": "543",
         "missing": ["", "567", "56", "6", "566"],
-        "visible": false,
         "children": [
             {
               "Name": "Share Class",
@@ -246,16 +253,20 @@
               "isin": "454",
               "visible": false
             }
-        ]
+        ],
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
       },
       {
-        "Name": "6789",
+        "Name": "WMF Gbl Hlth Care",
         "currency": "USD 500",
         "coreHoldingID": "6778",
         "poe": "Poe",
         "nav": "",
         "isin": "6755",
-        "visible": false,
         "missing": ["USD 350", "6778", "56", "", "6755"],
         "children": [
             {
@@ -276,16 +287,20 @@
               "isin": "678",
               "visible": false
             }
-        ]        
+        ],
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
       },
       {
-        "Name": "6437",
+        "Name": "WMF Opp Themes",
         "currency": "USD 540",
         "coreHoldingID": "4567",
         "poe": "",
         "nav": "456",
         "isin": "567",
-        "visible": false,
         "missing": ["USD 300", "4567", "", "435", "44676"],
         "children": [
             {
@@ -306,16 +321,20 @@
               "isin": "",
               "visible": false
             }
-        ]
+        ],
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
       },
       {
-        "Name": "6785",
+        "Name": "WMF Gbl Credit BAM (IE)",
         "currency": "Base currency",
         "coreHoldingID": "",
         "poe": "645",
         "nav": "456",
         "isin": "7878",
-        "visible": false,
         "missing": ["USD 300", "", "456", "56", "987"],
         "children": [
             {
@@ -336,7 +355,12 @@
               "isin": "676",
               "visible": false
             }
-        ]        
+        ],
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
       }
     ]
   },
@@ -386,6 +410,7 @@
               "date":"2016-11-06 8:15 AM"
             }
           ],
+        "user": "GARSS",
         "error": 6,
         "warning": 10
       },
@@ -410,6 +435,7 @@
               "date":"2016-11-07 10:10 AM"
             }
         ],
+        "user": "GARSS",
         "error": 11,
         "warning": 0
       },
@@ -434,6 +460,7 @@
               "date":"2016-11-07 9:10 AM"
             }
         ],
+        "user": "GARSS",
         "error": 10,
         "warning": 5
       },
@@ -458,6 +485,7 @@
               "date":"2016-11-07 9:10 AM"
             }
         ],
+        "user": "GARSS",
         "error": 15,
         "warning": 6
       },
@@ -481,7 +509,8 @@
               "warning": 10,
               "date":"2016-11-07 10:10 AM"
             }
-          ],
+        ],
+        "user": "GARSS",
         "error": 0,
         "warning": 0
       },
@@ -505,20 +534,20 @@
               "warning": 10,
               "date":"2016-11-07 10:10 AM"
             }
-          ],
+        ],
+        "user": "GARSS",
         "error": 0,
         "warning": 0
       }
     }, 
     "funds": [
       {
-        "Name": "6803",
+        "Name": "WMF Emg Mkts Syst Eq (IE)",
         "currency": "USD 760",
         "coreHoldingID": "5667",
         "poe": "455",
         "nav": "",
         "isin": "7887",
-        "visible": false,
         "missing": ["USD 300", "5667", "Poe", "", "ISIN"],
         "children": [
             {
@@ -539,16 +568,20 @@
               "isin": "786",
               "visible": false
             }
-        ]
+        ],
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
       },
       {
-        "Name": "6789",
+        "Name": "WMF Emg Mkts Res Eqt (IE)",
         "currency": "",
         "coreHoldingID": "",
         "poe": "776",
         "nav": "456",
         "isin": "8997",
-        "visible": false,
         "missing": ["USD 300", "", "Poe", "Nav", "7878"],
         "children": [
             {
@@ -569,7 +602,12 @@
               "isin": "675",
               "visible": false
             }
-        ]        
+        ],
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
       }
     ]
   },
@@ -619,6 +657,7 @@
               "date":"2016-11-04 10:20 AM"
             }
         ],
+        "user": "GARSS",
         "error": 10,
         "warning": 8
       },
@@ -643,6 +682,7 @@
               "date":"2016-11-07 10:10 AM"
             }
         ],
+        "user": "GARSS",
         "error": 11,
         "warning": 0
       },
@@ -667,6 +707,7 @@
               "date":"2016-11-07 9:10 AM"
             }
         ],
+        "user": "GARSS",
         "error": 10,
         "warning": 5
       },
@@ -691,19 +732,19 @@
               "date":"2016-11-07 9:10 AM"
             }
         ],
+        "user": "GARSS",
         "error": 15,
         "warning": 6
       }
     },
     "funds": [
       {
-        "Name": "9860",
+        "Name": "WMF Opp Emq Mkts Dbt (IE)",
         "currency": "USD 760",
         "coreHoldingID": "",
         "poe": "556",
         "nav": "767",
         "isin": "6464",
-        "visible": false,
         "missing": ["USD 300", "", "998", "78", "7887"],
         "children": [
             {
@@ -724,16 +765,20 @@
               "isin": "",
               "visible": false
             }
-        ]
+        ],
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
       },
       {
-        "Name": "6789",
+        "Name": "WMF Gbl Hlth Care",
         "currency": "USD 300",
         "coreHoldingID": "",
         "poe": "435",
         "nav": "435",
         "isin": "6767",
-        "visible": false,
         "missing": ["USD 300", "", "76876", "45", "6767"],
         "children": [
             {
@@ -754,7 +799,12 @@
               "isin": "6776",
               "visible": false
             }
-        ]        
+        ],
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
       }
     ]
   }

@@ -53,21 +53,21 @@
             vm.fundGraphData = getTotalCount([fundItem], false);
         }
         vm.toggleFundTree = function(fund) {
-        	fund.visible = !fund.visible;
+        	fund.visible.fund = !fund.visible.fund;
         }
-        vm.getSysmbol = function(fund) {
+        /*vm.getSysmbol = function(fund) {
         	if(!fund.children) {
         		return '';
         	}
         	if(fund.children.length < 1) {
         		return '';
         	}
-        	if(fund.visible) {
+        	if(fund.visible.fund) {
         		return 'fa fa-minus-square';
         	} else {
         		return 'fa fa-plus-square'
         	}
-        }
+        }*/
         vm.expendCollepse = function() {
         	vm.expendCheckbox = !vm.expendCheckbox;
         	angular.forEach(vm.fundData, function(item, key) {
@@ -176,8 +176,9 @@
         //vm.toggleExpendParent = function(key) {
         //    vm.visibility[key].visible = !vm.visibility[key].visible
         //}
-        vm.toggleExpendChildren = function(parentKey, Key) {
-            vm.visibility[parentKey][Key].visible = !vm.visibility[parentKey][Key].visible;
+        vm.toggleExpendChildren = function(fund, key) {
+            //vm.visibility[parentKey][Key].visible = !vm.visibility[parentKey][Key].visible;
+            fund.visible[key] = !fund.visible[key];
         }
         vm.getSysmbol = function(fund) {
             if(!fund.children) {
@@ -199,8 +200,8 @@
                 return 'fa fa-plus-square'
             }
         }*/
-        vm.getSysmbolForChild = function(parentKey, Key) {            
-            if(vm.visibility[parentKey][Key].visible) {
+        vm.getSysmbolForChild = function(fund, key) {            
+            if(fund.visible[key]) {
                 return 'fa fa-minus-square';
             } else {
                 return 'fa fa-plus-square'
@@ -220,6 +221,7 @@
             items.approveDate = recentDate;
             items.error = 0;
             items.warning = 0;
+            items.user = "SHGS";
             angular.forEach(items.recentDates, function(item, key) {
                 if(item.date === recentDate) {
                     item.error = 0;

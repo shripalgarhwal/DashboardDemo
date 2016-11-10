@@ -46,13 +46,7 @@
 		        	ng-repeat="family in vm.fundData"><a href="#" ng-click="vm.selectDate(family)">{{family.asOfDate}}</a></li>		        
 		      </ul>
 		    </div>
-		</div>
-		<div class="col-md-1 padding-none margin-none"
-			ng-if="vm.detailVisible">
-			<button
-				class="btn btn-primary margin-top-5"
-			 	ng-click="vm.viewErrorDetails()">Back</button>
-		</div>
+		</div>		
 		<!--<div class="col-md-2 padding-none margin-none margin-top-5">
 			<label>Expend All:
 			     <button 
@@ -84,7 +78,12 @@
 			<div class="col-md-2 margin-top-5 red-text"><b>Total Warnings:<br/> {{vm.viewDetailAsOfDate.warning}}</b></div>
 			
 		</div>
-
+		<div class="col-md-1 padding-none margin-none"
+			ng-if="vm.detailVisible">
+			<button
+				class="btn btn-primary margin-top-5"
+			 	ng-click="vm.viewErrorDetails()">Back >></button>
+		</div>
 	</div>
 	
 	<div  class="col-md-12 padding-none margin-none margin-top-5"
@@ -166,7 +165,7 @@
 			   				{{items.approveDate}}
 			   			</div>
 			   			<div class="col-md-1 padding-none margin-top-5 height-30">
-			   				GARSS
+			   				{{items.user}}
 			   			</div>
 			   			<div class="col-md-2 height-30">
 			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
@@ -226,30 +225,30 @@
 					<div class="box box-primary col-md-12 padding-none margin-none">
 						<div class="fund-list">
 							<ul style="width:100%;" class="padding-none margin-none">
-								<li ng-repeat="fund in vm.selectedFundFamilly.funds | fundFilter:vm.fundName" style="" ng-class="(fund.visible)?' col-md-12 padding-none margin-none height-auto':'col-md-12 padding-none margin-none height-35'">
+								<li ng-repeat="fund in vm.selectedFundFamilly.funds | fundFilter:vm.fundName" style="" ng-class="(fund.visible.fund)?' col-md-12 padding-none margin-none height-auto':'col-md-12 padding-none margin-none height-35'">
 						   			
-						   			<div class="col-md-2 margin-top-5 height-30">
-						   				<a href="" ng-click="vm.toggleFundTree(fund)"><i ng-class="vm.getSysmbol(fund)" aria-hidden="true"></i> {{fund.Name}}</a>
+						   			<div class="col-md-6 margin-top-5 height-30">
+						   				<a href="" ng-click="vm.toggleFundTree(fund)"><i ng-class="(fund.visible.fund)?'fa fa-minus-square':'fa fa-plus-square'" aria-hidden="true"></i> {{fund.Name}}</a>
 						   			</div>
 					   				<ul style="width:100%;"
 					   					class="padding-none margin-none"
-					   					ng-if="fund.children.length > 0 && fund.visible">
+					   					ng-if="fund.children.length > 0 && fund.visible.fund">
 					   					<li 
-					   						ng-class="(vm.visibility.fund.error.visible)?' col-md-12 padding-none margin-none height-auto':'col-md-12 padding-none margin-none height-35'">
+					   						ng-class="(fund.visible.error)?' col-md-12 padding-none margin-none height-auto':'col-md-12 padding-none margin-none height-35'">
 					   						<div class="col-md-2 margin-top-5 height-30">
 								   				<a href="" 
-								   					ng-click="vm.toggleExpendChildren('fund', 'error')">
-								   					<i ng-class="vm.getSysmbolForChild('fund', 'error')" aria-hidden="true"></i> </a>
+								   					ng-click="vm.toggleExpendChildren(fund, 'error')">
+								   					<i ng-class="vm.getSysmbolForChild(fund, 'error')" aria-hidden="true"></i> </a>
 								   				<b>Errors</b>
 								   			</div>
 								   			<div class="col-md-12 box-border"
-								   				ng-if="vm.visibility.fund.error.visible"> 
+								   				ng-if="fund.visible.error"> 
 								   				<div  class="col-md-12">
 								   					<div class="col-md-3 alert alert-danger margin-5">
 								   						Fund long name missing
 								   					</div>
 								   					<div class="col-md-3 alert alert-danger margin-5">
-								   						Domisile missing
+								   						Domicile missing
 								   					</div>
 								   					<div class="col-md-3 alert alert-danger margin-5">
 								   						Fund inception date missing
@@ -267,14 +266,14 @@
 
 
 					   					</li>
-					   					<li ng-class="(vm.visibility.fund.warning.visible)?' col-md-12 padding-none margin-none height-auto':'col-md-12 padding-none margin-none height-35'">
+					   					<li ng-class="(fund.visible.warning)?' col-md-12 padding-none margin-none height-auto':'col-md-12 padding-none margin-none height-35'">
 					   						<div class="col-md-2 margin-top-5 height-30">
 								   				<a href="" 
-								   					ng-click="vm.toggleExpendChildren('fund', 'warning')"><i ng-class="vm.getSysmbolForChild('fund', 'warning')" aria-hidden="true"></i> </a>
+								   					ng-click="vm.toggleExpendChildren(fund, 'warning')"><i ng-class="vm.getSysmbolForChild(fund, 'warning')" aria-hidden="true"></i> </a>
 								   				<b>Warnings</b>
 								   			</div>
 								   			<div class="col-md-12 box-border"
-								   				ng-if="vm.visibility.fund.warning.visible"> 
+								   				ng-if="fund.visible.warning"> 
 								   				<div  class="col-md-12">
 								   					<div class="col-md-3 alert alert-warning margin-5">
 								   						Country Code Missing
