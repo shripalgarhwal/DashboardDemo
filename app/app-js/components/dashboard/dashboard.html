@@ -1,13 +1,27 @@
 <div
 	ng-controller="dashboardCtrl as vm">
 	<div class="col-md-12 menu-border-bottom">
-		<h4>Data Report Dashboard</h4>
+		<h4>WMS Dashboard</h4>
 	</div>
 	<div class="col-md-12 menu-border-bottom" 
 		>
+		<div
+			class="col-md-3 padding-none margin-none"
+			ng-if="vm.detailVisible">
+			<div class="col-md-4 padding-none margin-none margin-top-5">
+				<label>Search Fund:</label>
+			</div>
+			<div class="col-md-8 margin-top-5">
+				<input 
+					type="text" 
+					ng-model="vm.fundName" 
+					class="form-control"
+					placeholder="Enter a fund name to filter">
+			</div>
+		</div>
 		<div class="col-md-2 padding-none margin-none"
 			ng-if="!vm.detailVisible">
-			<p class="margin-top-10"><b>Please Select AsOfDate: </b></p>
+			<p class="margin-top-10"><b>Please Select Valid AsOfDate: </b></p>
 		</div>
 		<div class="col-md-2 padding-none margin-none"
 			ng-if="!vm.detailVisible">
@@ -62,12 +76,12 @@
 				</tr>
 			</table>
 		</div>-->
-		<div class="col-md-11"
+		<div class="col-md-8"
 			ng-if="vm.detailVisible">
-			<div class="col-md-4 margin-top-5"><b>Approved As At Date: {{vm.viewDetailAsOfDate.approveDate}}</b></div>
-			<div class="col-md-4 margin-top-5"><b>Most Recent As At Date: {{vm.viewDetailAsOfDate.recentDate}}</b></div>
-			<div class="col-md-2 margin-top-5 red-text"><b>Total Errors: {{vm.viewDetailAsOfDate.error}}</b></div>
-			<div class="col-md-2 margin-top-5 red-text"><b>Total Warnings: {{vm.viewDetailAsOfDate.warning}}</b></div>
+			<div class="col-md-4 margin-top-5"><b>Approved As At Date:<br/> {{vm.viewDetailAsOfDate.approveDate}}</b></div>
+			<div class="col-md-4 margin-top-5"><b>Most Recent As At Date:<br/> {{vm.viewDetailAsOfDate.recentDate}}</b></div>
+			<div class="col-md-2 margin-top-5 red-text"><b>Total Errors:<br/> {{vm.viewDetailAsOfDate.error}}</b></div>
+			<div class="col-md-2 margin-top-5 red-text"><b>Total Warnings:<br/> {{vm.viewDetailAsOfDate.warning}}</b></div>
 			
 		</div>
 
@@ -212,7 +226,7 @@
 					<div class="box box-primary col-md-12 padding-none margin-none">
 						<div class="fund-list">
 							<ul style="width:100%;" class="padding-none margin-none">
-								<li ng-repeat="fund in vm.selectedFundFamilly.funds" style="" ng-class="(fund.visible)?' col-md-12 padding-none margin-none height-auto':'col-md-12 padding-none margin-none height-35'">
+								<li ng-repeat="fund in vm.selectedFundFamilly.funds | fundFilter:vm.fundName" style="" ng-class="(fund.visible)?' col-md-12 padding-none margin-none height-auto':'col-md-12 padding-none margin-none height-35'">
 						   			
 						   			<div class="col-md-2 margin-top-5 height-30">
 						   				<a href="" ng-click="vm.toggleFundTree(fund)"><i ng-class="vm.getSysmbol(fund)" aria-hidden="true"></i> {{fund.Name}}</a>
