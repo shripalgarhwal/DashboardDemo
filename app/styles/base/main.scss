@@ -46,12 +46,7 @@ body {
 //  height: 610px;
 //}
 
-.padding-none{
-  padding: 0px;
-}
-.margin-none{
-  margin: 0px;
-}
+
 .box {
     position: relative;
     border-radius: 3px;
@@ -64,15 +59,7 @@ body {
 .box.box-primary {
     border-top-color: #3c8dbc;
 }
-.margin-5{
-  margin: 5px;
-}
-.margin-top-10{
-  margin-top: 10px;
-}
-.margin-top-5{
-  margin-top: 5px;
-}
+
 .red-text{
   color: #a94442;
 }
@@ -99,6 +86,20 @@ body {
   height: 34px;
   padding-top: 5px;
   margin-top: 1px;
+}
+.box-override{
+  background-color: #ffc107;
+  color: #ffffff;
+  border-radius: 4px;
+  height: 34px;
+  padding-top: 5px;
+  margin-top: 1px;
+}
+.color-red{
+  color: red;
+}
+.heighlight-bg{
+  background-color: #bbd4ea;
 }
 .success-alert{
   background-color: #5fbc27;
@@ -145,7 +146,30 @@ body {
 .height-auto{
   height: auto;
 }
-
+.margin-5 {
+  margin: 5px;
+}
+.padding-none{
+  padding: 0px;
+}
+.margin-none{
+  margin: 0px;
+}
+.margin-5{
+  margin: 5px;
+}
+.margin-top-10{
+  margin-top: 10px;
+}
+.margin-top-5{
+  margin-top: 5px;
+}
+.pad-left-5{
+  padding-left: 5px;
+}
+.width-32-per{
+  width: 32%;
+}
 .nav-pills>li>a{
   border-radius: 4px 4px 0px 0px;
 }
@@ -155,9 +179,7 @@ body {
 .alert{
   padding: 5px 5px 10px 5px;
 }
-.margin-5 {
-  margin: 5px;
-}
+
 .box-border{
   border: 1px solid #cccccc; color: #687380;
 }

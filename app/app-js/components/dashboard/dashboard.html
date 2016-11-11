@@ -23,7 +23,7 @@
 			ng-if="!vm.detailVisible">
 			<p class="margin-top-10"><b>Please Select AsOfDate: </b></p>
 		</div>
-		<div class="col-md-2 padding-none margin-none"
+		<div class="col-md-8 padding-none margin-none"
 			ng-if="!vm.detailVisible">
 			<div class="btn-group margin-5" 
 				uib-dropdown is-open="status.isopen"
@@ -46,7 +46,11 @@
 		        	ng-repeat="family in vm.fundData"><a href="#" ng-click="vm.selectDate(family)">{{family.asOfDate}}</a></li>		        
 		      </ul>
 		    </div>
-		</div>		
+		</div>
+		<div class="col-md-2 padding-none margin-none"
+			ng-if="!vm.detailVisible">
+			<p class="margin-top-10"><b>Business Day: {{vm.businesDay}}</b></p>
+		</div>
 		<!--<div class="col-md-2 padding-none margin-none margin-top-5">
 			<label>Expend All:
 			     <button 
@@ -94,10 +98,10 @@
 					<li class="col-md-12 padding-none margin-none height-35">
 			   			<div class="col-md-2 margin-top-5"><b>Data Category</b></div>
 		   				<div class="col-md-1 margin-top-5"><b>As Of Date</b></div>
-		   				<div class="col-md-2 margin-top-5"><b>Approved As At Date</b></div>
-		   				<div class="col-md-1 padding-none margin-top-5"><b>Approved By</b></div>
+		   				<div class="col-md-2 margin-top-5"><b>Approved As At Date</b></div>		   				
 		   				<div class="col-md-2 margin-top-5"><b>Most Recent As At Date</b></div>
-		   				<div class="col-md-4 margin-top-5"><b>Data Quality</b></div>
+		   				<div class="col-md-4 margin-top-5 width-32-per"><b>Data Quality</b></div>
+		   				<div class="col-md-1 padding-none margin-top-5 pad-left-5"><b>NT Name</b></div>
 		   				<!--<div class="col-md-2 margin-top-5"><b>ISIN</b></div>-->
 			   		</li>
 			   		<!--<li class="col-md-12 padding-none margin-none height-35">
@@ -154,19 +158,16 @@
 			   			
 			   		</li>-->
 			   		<li class="col-md-12 padding-none margin-none height-35"
-			   			ng-repeat="items in vm.selectedFundFamilly.version">
+			   			ng-repeat="(key, items) in vm.selectedFundFamilly.version">
 			   			<div class="col-md-2 margin-top-5 height-30">
-			   				<b>{{items.Name}}</b>
+			   				<b>{{items.Name}}<label ng-if="vm.visibleAsterisk(items)" class="color-red">*</label></b>
 			   			</div>
 			   			<div class="col-md-1 margin-top-5 height-30">
-			   				{{vm.fundData[0].asOfDate}}
+			   				{{vm.selected}}
 			   			</div>
-			   			<div class="col-md-2 margin-top-5 height-30">
+			   			<div ng-class="(items.oldApprovedDate === items.approveDate)?'col-md-2 margin-top-5 height-30': 'col-md-2 margin-top-5 height-30 heighlight-bg'">
 			   				{{items.approveDate}}
-			   			</div>
-			   			<div class="col-md-1 padding-none margin-top-5 height-30">
-			   				{{items.user}}
-			   			</div>
+			   			</div>			   			
 			   			<div class="col-md-2 height-30">
 			   				<div class="btn-group" uib-dropdown is-open="status.isopen">
 								<button id="single-button" type="button" class="btn btn-default" uib-dropdown-toggle ng-disabled="disabled">
@@ -174,12 +175,14 @@
 								</button>
 								<ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="single-button">
 									<li role="menuitem"
+										ng-class="(indexItem.override)?'heighlight-bg':''"
 										ng-repeat="indexItem in items.recentDates">
-										<a href="#" ng-click="vm.selectRecentDate(items, indexItem)">{{indexItem.date}}</a></li>
+										<a href="#" ng-click="vm.selectRecentDate(items, indexItem)">{{indexItem.date}}<i class="fa fa-check" ng-if="indexItem.override" aria-hidden="true"></i></a>
+									</li>
 								</ul>
 						    </div>
 			   			</div>
-			   			<div ng-class="(items.error === 0 && items.warning === 0)?'col-md-4 box-success': 'col-md-4 box-danger'">
+			   			<div ng-class="vm.valideOverrideBox(items)">
 			   				<div class="col-md-8 padding-none margin-none"
 			   					ng-if="(items.error === 0 && items.warning === 0)">
 			   					<b>Data Quality: No Error, Warnings</b>	
@@ -190,23 +193,26 @@
 				   				<span 
 				   					title="Click to View Detail"
 				   					class="alert alert-danger mouse-p"
-				   					ng-click="vm.viewErrorDetails(items)">Errors: {{items.error}}</span>
+				   					ng-click="vm.viewErrorDetails(items, key)">Errors: {{items.error}}</span>
 				   				<span 
 				   					title="Click to View Detail"
 				   					class="alert alert-warning mouse-p"
-				   					ng-click="vm.viewErrorDetails(items)">Warnings: {{items.warning}}</span>
+				   					ng-click="vm.viewErrorDetails(items, key)">Warnings: {{items.warning}}</span>
 			   				</div>
 			   				<div class="col-md-4 padding-none margin-none"
-			   					ng-if="(items.recentDate !== items.approveDate)">
+			   					ng-if="(!items.override)">
 				   				<button
 				   					class="btn btn-default"
 				   					style="padding: 0px 10px 0px 10px;"
-				   				 ng-click="vm.approveData(items, items.recentDate)">Approve</button>
+				   				 ng-click="vm.approveData(items, items.recentDate)">Override</button>
 				   				 <!--<button
 				   					class="btn btn-default"
 				   					style="padding: 0px 10px 0px 10px;"
 				   				 ng-click="vm.viewErrorDetails()">Reject</button>-->
 			   				 </div>
+			   			</div>
+			   			<div class="col-md-1 padding-none margin-top-5 height-30 pad-left-5">
+			   				{{items.user}}
 			   			</div>
 			   		</li>			   		
 				</ul>
@@ -225,14 +231,14 @@
 					<div class="box box-primary col-md-12 padding-none margin-none">
 						<div class="fund-list">
 							<ul style="width:100%;" class="padding-none margin-none">
-								<li ng-repeat="fund in vm.selectedFundFamilly.funds | fundFilter:vm.fundName" style="" ng-class="(fund.visible.fund)?' col-md-12 padding-none margin-none height-auto':'col-md-12 padding-none margin-none height-35'">
+								<li ng-repeat="fund in vm.selectedFundFamilly[vm.selectedCategory] | fundFilter:vm.fundName" style="" ng-class="(fund.visible.fund)?' col-md-12 padding-none margin-none height-auto':'col-md-12 padding-none margin-none height-35'">
 						   			
 						   			<div class="col-md-6 margin-top-5 height-30">
 						   				<a href="" ng-click="vm.toggleFundTree(fund)"><i ng-class="(fund.visible.fund)?'fa fa-minus-square':'fa fa-plus-square'" aria-hidden="true"></i> {{fund.Name}}</a>
 						   			</div>
 					   				<ul style="width:100%;"
 					   					class="padding-none margin-none"
-					   					ng-if="fund.children.length > 0 && fund.visible.fund">
+					   					ng-if="fund.visible.fund">
 					   					<li 
 					   						ng-class="(fund.visible.error)?' col-md-12 padding-none margin-none height-auto':'col-md-12 padding-none margin-none height-35'">
 					   						<div class="col-md-2 margin-top-5 height-30">

@@ -16,6 +16,10 @@
 			'nav': '',
 			'isin': ''
     	};
+        //vm.changeApproveDate = '';
+        vm.selectedCategory = 'funds';
+        vm.businesDay = 'B4';
+        vm.selectedRecentDate = '2016-11-02 10:10 AM';
         vm.titles = ['Total Missing Fields As of Date: ', 'Missing Fields in Fund ID '];
     	vm.expendCheckbox = true;
         vm.pieData = fundDataService.getPieChartData();
@@ -207,28 +211,69 @@
                 return 'fa fa-plus-square'
             }
         }
+        vm.valideOverrideBox = function(items) {            
+            if(items.override && (items.error === 0 && items.warning === 0)) {
+                return 'col-md-4 box-success width-32-per';
+            } else if(items.override && (items.error !== 0 || items.warning !== 0)) {
+                return 'col-md-4 box-override width-32-per';
+            } else {
+                return 'col-md-4 box-danger width-32-per'
+            }
+        }
         vm.detailVisible = false;
-        vm.viewErrorDetails = function(asOfDate) {
+        vm.viewErrorDetails = function(asOfDate, key) {
+            vm.selectedCategory = key;
+            console.log(key,':::asOfDate::::', asOfDate);
             vm.viewDetailAsOfDate = asOfDate;
             vm.detailVisible = !vm.detailVisible
         }
         vm.selectRecentDate = function(items, recentDateItem) {
-            items.recentDate = recentDateItem.date
+            //vm.businesDay = (recentDateItem.date.split('-'))[2].substring(0,2);
+            items.recentDate = recentDateItem.date;
+            //vm.selectedRecentDate = items.recentDate;
             items.error = recentDateItem.error;
             items.warning = recentDateItem.warning;
+            items.override = recentDateItem.override;
+            if(items.override) {
+                items.user = recentDateItem.user;
+            } else {
+                items.user = '';
+            }            
         }
         vm.approveData = function(items, recentDate) {
             items.approveDate = recentDate;
-            items.error = 0;
-            items.warning = 0;
-            items.user = "SHGS";
+            //items.error = 0;
+            //items.warning = 0;            
+            items.override = true;
+            //items.user = "SHGSS";
             angular.forEach(items.recentDates, function(item, key) {
                 if(item.date === recentDate) {
-                    item.error = 0;
-                    item.warning = 0;
+                    //item.error = 0;
+                    //item.warning = 0;
+                    item.override = true;
+                    items.error = item.error;
+                    items.warning = item.warning;
+                    items.user = item.user;
                 }
             });
         }
+        vm.checkApproveDate = function(items) {
+            items['oldApprovedDate'] = items.approveDate;
+            //vm.selectedRecentDate = items.recentDates[0].date;
+            vm.selectedRecentDate = '2016-11-02 10:10 AM';
+        }
+        vm.visibleAsterisk = function(items) {
+            var visible = false;
+            angular.forEach(items.recentDates, function(item) {
+                if(item.date === vm.selectedRecentDate) {
+                    visible = true;
+                }
+            });
+            return visible;            
+        }
+        //$scope.$watch('items.approveDate', function (newValue, oldValue) {
+        //  console.log('watch fired, new value: ' + newValue);
+        //});
 
     }       
 }());
