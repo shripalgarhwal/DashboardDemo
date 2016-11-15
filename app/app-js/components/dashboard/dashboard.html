@@ -9,7 +9,7 @@
 			class="col-md-3 padding-none margin-none"
 			ng-if="vm.detailVisible">
 			<div class="col-md-4 padding-none margin-none margin-top-5">
-				<label>Search Fund:</label>
+				<p class="margin-top-10"><b>Search Fund:</b></p>
 			</div>
 			<div class="col-md-8 margin-top-5">
 				<input 
@@ -76,10 +76,10 @@
 		</div>-->
 		<div class="col-md-8"
 			ng-if="vm.detailVisible">
-			<div class="col-md-4 margin-top-5"><b>Approved As At Date:<br/> {{vm.viewDetailAsOfDate.approveDate}}</b></div>
-			<div class="col-md-4 margin-top-5"><b>Most Recent As At Date:<br/> {{vm.viewDetailAsOfDate.recentDate}}</b></div>
-			<div class="col-md-2 margin-top-5 red-text"><b>Total Errors:<br/> {{vm.viewDetailAsOfDate.error}}</b></div>
-			<div class="col-md-2 margin-top-5 red-text"><b>Total Warnings:<br/> {{vm.viewDetailAsOfDate.warning}}</b></div>
+			<div class="col-md-4 margin-top-5" style="text-align:center;"><b>Approved As At Date:<br/> {{vm.viewDetailAsOfDate.approveDate}}</b></div>
+			<div class="col-md-4 margin-top-5" style="text-align:center;"><b>Most Recent As At Date:<br/> {{vm.viewDetailAsOfDate.recentDate}}</b></div>
+			<div class="col-md-2 margin-top-5 red-text"style="text-align:center;"><b>Total Errors:<br/> {{vm.viewDetailAsOfDate.error}}</b></div>
+			<div class="col-md-2 margin-top-5 red-text" style="text-align:center;"><b>Total Warnings:<br/> {{vm.viewDetailAsOfDate.warning}}</b></div>
 			
 		</div>
 		<div class="col-md-1 padding-none margin-none"
@@ -224,10 +224,13 @@
 
 	<div  class="col-md-12 padding-none margin-none margin-top-5"
 		ng-if="vm.detailVisible">
-		<uib-tabset active="activePill" class="col-md-12" type="pills">
+		<category-error-warning-details 
+			selected-fund-familly="vm.selectedFundFamilly[vm.selectedCategory]"
+			fund-name="vm.fundName"
+			fund-graph-data="{{vm.fundGraphData}}"
+			pie-data="{{vm.pieData}}"></category-error-warning-details>
+		<!--<uib-tabset active="activePill" class="col-md-12" type="pills">
 			<uib-tab index="0" heading="View Fields">
-				
-				<!--<div  class="col-md-12 padding-none margin-none">-->
 					<div class="box box-primary col-md-12 padding-none margin-none">
 						<div class="fund-list">
 							<ul style="width:100%;" class="padding-none margin-none">
@@ -306,11 +309,9 @@
 							</ul>
 						</div>
 					</div>
-				<!--</div>-->
 
 			</uib-tab>
 			<uib-tab index="1" heading="Data Report">
-				<!-- Report graph-->
 					<div class="box box-primary col-md-12 padding-none margin-none">
 						<div  class="col-md-12 menu-border-bottom margin-top-10">
 							<div  class="col-md-6">
@@ -351,8 +352,7 @@
 								</div>								
 							</div>
 							
-						</div>-->
-						<!-- Selected fund missin graph-->
+						</div>
 						<div class="col-md-12 margin-top-10">
 							<hc-chart options="vm.chartOptions">Placeholder for generic chart</hc-chart>
 						</div>	
@@ -360,7 +360,7 @@
 					</div>
 			</uib-tab>
 			
-		</uib-tabset>
+		</uib-tabset>-->
 	</div>
 	
 </div>

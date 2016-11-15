@@ -1,6 +1,1272 @@
 [
   {
     "fundFamilly": "Fixed Income",
+    "asOfDate": "2016-11-02",
+    "approveDate": "2016-11-02 9:10 AM",
+    "recentDate": "2016-11-03 10:10 AM",
+    "recentDates": [
+          {
+            "error": 15,
+            "warning": 5,
+            "date":"2016-11-03 10:10 AM"
+          },
+          {
+            "error": 5,
+            "warning": 10,
+            "date":"2016-11-03 06:10 AM"
+          },
+          {
+            "error": 0,
+            "warning": 0,
+            "date":"2016-11-02 9:10 AM"
+          }
+      ],
+    "error": 15,
+    "warning": 5,
+    "version": {
+      "funds": {
+        "Name": "Fund Data",
+        "approveDate": "2016-11-02 9:10 AM",
+        "oldApprovedDate": "2016-11-02 9:10 AM",
+        "recentDate": "2016-11-04 10:10 AM",
+        "user": "",
+        "recentDates": [
+              {
+                "error": 15,
+                "warning": 5,
+                "date":"2016-11-04 10:10 AM",
+                "override": false,
+                "user": "LSherman"
+              },
+              {
+                "error": 5,
+                "warning": 10,
+                "date":"2016-11-04 06:10 AM",
+                "override": false,
+                "user": "LSherman"
+              },
+              {
+                "error": 0,
+                "warning": 0,
+                "date":"2016-11-02 9:10 AM",
+                "override": true,
+                "user": ""
+              }
+          ],
+        "override": false,
+        "error": 15,
+        "warning": 5
+      },
+      "characteristics": {
+        "Name": "Characteristics",
+        "recentDate": "2016-11-05 10:10 AM",
+        "approveDate": "2016-11-02 9:10 AM",
+        "oldApprovedDate": "2016-11-02 9:10 AM",
+        "recentDates": [
+            {
+              "error": 10,
+              "warning": 5,
+              "date":"2016-11-05 10:10 AM",
+              "override": false,
+              "user": "MJWright"
+            },
+            {
+              "error": 3,
+              "warning": 4,
+              "date":"2016-11-05 06:10 AM",
+              "override": false,
+              "user": "MJWright"
+            },
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-02 9:10 AM",
+              "override": true,
+              "user": ""
+            }
+        ],
+        "override": false,
+        "user": "",
+        "error": 10,
+        "warning": 5
+      },
+      "shareClass": {
+        "Name": "Share Class",
+        "approveDate": "2016-11-02 9:10 AM",
+        "oldApprovedDate": "2016-11-02 9:10 AM",
+        "recentDate": "2016-11-05 10:10 AM",
+        "recentDates": [
+            {
+              "error": 15,
+              "warning": 6,
+              "date":"2016-11-05 10:10 AM",
+              "override": false,
+              "user": "MJWright"
+            },
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-03 06:10 AM",
+              "override": true,
+              "user": ""
+            },
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-02 9:10 AM",
+              "override": true,
+              "user": ""
+            }
+        ],
+        "override": false,
+        "user": "",
+        "error": 15,
+        "warning": 6
+      },
+      "nav": {
+        "Name": "NAV",
+        "recentDate": "2016-11-03 10:10 AM",
+        "approveDate": "2016-11-03 10:10 AM",
+        "oldApprovedDate": "2016-11-03 10:10 AM",
+        "recentDates": [
+            {
+              "error": 5,
+              "warning": 0,
+              "date":"2016-11-03 10:10 AM",
+              "override": true,
+              "user": "AlTuthill"
+            },
+            {
+              "error": 6,
+              "warning": 2,
+              "date":"2016-11-03 06:10 AM",
+              "override": false,
+              "user": "AlTuthill"
+            },
+            {
+              "error": 5,
+              "warning": 10,
+              "date":"2016-11-02 10:10 AM",
+              "override": false,
+              "user": "AlTuthill"
+            }
+        ],
+        "override": true,
+        "user": "AlTuthill",
+        "error": 5,
+        "warning": 0
+      },
+      "holdings": {
+        "Name": "Holdings",
+        "recentDate": "2016-11-03 10:10 AM",
+        "approveDate": "2016-11-03 10:10 AM",
+        "oldApprovedDate": "2016-11-03 10:10 AM",
+        "recentDates": [
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-03 10:10 AM",
+              "override": true,
+              "user": ""
+            },
+            {
+              "error": 11,
+              "warning": 2,
+              "date":"2016-11-02 16:10 AM",
+              "override": false,
+              "user": "AlTuthill"
+            },
+            {
+              "error": 0,
+              "warning": 10,
+              "date":"2016-11-02 06:10 AM",
+              "override": false,
+              "user": "AlTuthill"
+            }
+        ],
+        "override": true,
+        "user": "",
+        "error": 0,
+        "warning": 0
+      },
+      "distribution": {
+        "Name": "Distribution",
+        "recentDate": "2016-11-04 10:10 AM",
+        "approveDate": "2016-11-04 10:10 AM",
+        "oldApprovedDate": "2016-11-04 10:10 AM",
+        "recentDates": [
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-04 10:10 AM",
+              "override": true,
+              "user": ""
+            },
+            {
+              "error": 5,
+              "warning": 0,
+              "date":"2016-11-03 06:10 AM",
+              "override": false,
+              "user": "LSherman"
+            },
+            {
+              "error": 8,
+              "warning": 0,
+              "date":"2016-11-02 10:10 AM",
+              "override": false,
+              "user": "LSherman"
+            }
+        ],
+        "override": true,
+        "user": "",
+        "error": 0,
+        "warning": 0
+      },
+      "oneview": {
+        "Name": "OneView Sheet- Fund Facts",
+        "recentDate": "2016-11-04 10:10 AM",
+        "approveDate": "2016-11-04 10:10 AM",
+        "oldApprovedDate": "2016-11-04 10:10 AM",
+        "recentDates": [
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-04 10:10 AM",
+              "override": true,
+              "user": ""
+            }
+        ],
+        "override": true,
+        "user": "",
+        "error": 0,
+        "warning": 0
+      }
+    },    
+    "funds": [
+      {
+        "Name": "WMF Global Bond (IE) 12371",
+        "currency": "",
+        "coreHoldingID": "567",
+        "poe": "65",
+        "nav": "677",
+        "isin": "543",
+        "missing": ["", "567", "56", "6", "566"],
+        "children": [
+            {
+              "Name": "Share Class",
+              "currency": "",
+              "coreHoldingID": "",
+              "poe": "",
+              "nav": "6575",
+              "isin": "",
+              "visible": false              
+            },
+            {
+              "Name": "Share Class",
+              "currency": "USD 860",
+              "coreHoldingID": "56835",
+              "poe": "5654",
+              "nav": "",
+              "isin": "454",
+              "visible": false
+            }
+        ],
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "WMF Gbl Hlth Care",
+        "currency": "USD 500",
+        "coreHoldingID": "6778",
+        "poe": "Poe",
+        "nav": "",
+        "isin": "6755",
+        "missing": ["USD 350", "6778", "56", "", "6755"],
+        "children": [
+            {
+              "Name": "Share Class",
+              "currency": "",
+              "coreHoldingID": "",
+              "poe": "456",
+              "nav": "",
+              "isin": "6564",
+              "visible": false
+            },
+            {
+              "Name": "Share Class",
+              "currency": "USD 600",
+              "coreHoldingID": "56677",
+              "poe": "",
+              "nav": "456",
+              "isin": "678",
+              "visible": false
+            }
+        ],
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "WMF Opp Themes",
+        "currency": "USD 540",
+        "coreHoldingID": "4567",
+        "poe": "",
+        "nav": "456",
+        "isin": "567",
+        "missing": ["USD 300", "4567", "", "435", "44676"],
+        "children": [
+            {
+              "Name": "Share Class",
+              "currency": "",
+              "coreHoldingID": "6789",
+              "poe": "67",
+              "nav": "",
+              "isin": "685",
+              "visible": false
+            },
+            {
+              "Name": "Share Class",
+              "currency": "USD 8000",
+              "coreHoldingID": "",
+              "poe": "658",
+              "nav": "657",
+              "isin": "",
+              "visible": false
+            }
+        ],
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "WMF Gbl Credit BAM (IE)",
+        "currency": "Base currency",
+        "coreHoldingID": "",
+        "poe": "645",
+        "nav": "456",
+        "isin": "7878",
+        "missing": ["USD 300", "", "456", "56", "987"],
+        "children": [
+            {
+              "Name": "Share Class",
+              "currency": "Base currency",
+              "coreHoldingID": "5678",
+              "poe": "435",
+              "nav": "45",
+              "isin": "6767",
+              "visible": false
+            },
+            {
+              "Name": "Share Class",
+              "currency": "",
+              "coreHoldingID": "",
+              "poe": "67",
+              "nav": "789",
+              "isin": "676",
+              "visible": false
+            }
+        ],
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      }
+    ],
+    "characteristics": [
+      {
+        "Name": "0201",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "0682",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "3T32",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "6136",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "5991",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "39V7",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "4S97",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      }
+    ],
+    "shareClass": [
+      {
+        "Name": "GBP Class S15 Accumulate Unhedged (489935)",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "USD Class K Accumulate Unhedged (5825989)",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "EUR Class F Distribute Unhedged (5843171)",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      }
+    ],
+    "nav": [
+      {
+        "Name": "IE0000710172",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "IE0002895195",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "IE0003110479",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "IE0003111113",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "IE0004890525",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "IE00B129GH09",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      }
+    ],
+    "holdings": [
+      {
+        "Name": "0201",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "0682",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "3T32",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "6136",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "5991",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "39V7",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "4S97",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      }
+    ],
+    "distribution": [
+      {
+        "Name": "0201",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "0682",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "3T32",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "6136",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "5991",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "39V7",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "4S97",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      }
+    ],
+    "oneview": []
+  },
+  {
+    "fundFamilly": "Fixed Income",
+    "asOfDate": "2016-11-01",
+    "approveDate": "2016-11-01 9:10 AM",
+    "recentDate": "2016-11-02 10:10 AM",
+    "recentDates": [
+          {
+            "error": 15,
+            "warning": 5,
+            "date":"2016-11-02 10:10 AM"
+          },
+          {
+            "error": 5,
+            "warning": 10,
+            "date":"2016-11-02 06:10 AM"
+          },
+          {
+            "error": 0,
+            "warning": 0,
+            "date":"2016-11-01 9:10 AM"
+          }
+      ],
+    "error": 15,
+    "warning": 5,
+    "version": {
+      "funds": {
+        "Name": "Fund Data",
+        "approveDate": "2016-11-01 9:10 AM",
+        "oldApprovedDate": "2016-11-01 9:10 AM",
+        "recentDate": "2016-11-03 10:10 AM",
+        "user": "",
+        "recentDates": [
+              {
+                "error": 15,
+                "warning": 5,
+                "date":"2016-11-03 10:10 AM",
+                "override": false,
+                "user": "LSherman"
+              },
+              {
+                "error": 5,
+                "warning": 10,
+                "date":"2016-11-03 06:10 AM",
+                "override": false,
+                "user": "LSherman"
+              },
+              {
+                "error": 0,
+                "warning": 0,
+                "date":"2016-11-01 9:10 AM",
+                "override": true,
+                "user": ""
+              }
+          ],
+        "override": false,
+        "error": 15,
+        "warning": 5
+      },
+      "characteristics": {
+        "Name": "Characteristics",
+        "recentDate": "2016-11-04 10:10 AM",
+        "approveDate": "2016-11-01 9:10 AM",
+        "oldApprovedDate": "2016-11-01 9:10 AM",
+        "recentDates": [
+            {
+              "error": 10,
+              "warning": 5,
+              "date":"2016-11-04 10:10 AM",
+              "override": false,
+              "user": "MJWright"
+            },
+            {
+              "error": 3,
+              "warning": 4,
+              "date":"2016-11-02 06:10 AM",
+              "override": false,
+              "user": "MJWright"
+            },
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-01 9:10 AM",
+              "override": true,
+              "user": ""
+            }
+        ],
+        "override": false,
+        "user": "",
+        "error": 10,
+        "warning": 5
+      },
+      "shareClass": {
+        "Name": "Share Class",
+        "approveDate": "2016-11-01 9:10 AM",
+        "oldApprovedDate": "2016-11-01 9:10 AM",
+        "recentDate": "2016-11-05 10:10 AM",
+        "recentDates": [
+            {
+              "error": 15,
+              "warning": 6,
+              "date":"2016-11-05 10:10 AM",
+              "override": false,
+              "user": "MJWright"
+            },
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-02 06:10 AM",
+              "override": true,
+              "user": ""
+            },
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-01 9:10 AM",
+              "override": true,
+              "user": ""
+            }
+        ],
+        "override": false,
+        "user": "",
+        "error": 15,
+        "warning": 6
+      },
+      "nav": {
+        "Name": "NAV",
+        "recentDate": "2016-11-02 10:10 AM",
+        "approveDate": "2016-11-02 10:10 AM",
+        "oldApprovedDate": "2016-11-02 10:10 AM",
+        "recentDates": [
+            {
+              "error": 5,
+              "warning": 0,
+              "date":"2016-11-02 10:10 AM",
+              "override": true,
+              "user": "AlTuthill"
+            },
+            {
+              "error": 6,
+              "warning": 2,
+              "date":"2016-11-02 06:10 AM",
+              "override": false,
+              "user": "AlTuthill"
+            },
+            {
+              "error": 5,
+              "warning": 10,
+              "date":"2016-11-01 10:10 AM",
+              "override": false,
+              "user": "AlTuthill"
+            }
+        ],
+        "override": true,
+        "user": "AlTuthill",
+        "error": 5,
+        "warning": 0
+      },
+      "holdings": {
+        "Name": "Holdings",
+        "recentDate": "2016-11-02 10:10 AM",
+        "approveDate": "2016-11-02 10:10 AM",
+        "oldApprovedDate": "2016-11-02 10:10 AM",
+        "recentDates": [
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-02 10:10 AM",
+              "override": true,
+              "user": ""
+            },
+            {
+              "error": 11,
+              "warning": 2,
+              "date":"2016-11-01 16:10 AM",
+              "override": false,
+              "user": "AlTuthill"
+            },
+            {
+              "error": 0,
+              "warning": 10,
+              "date":"2016-11-01 06:10 AM",
+              "override": false,
+              "user": "AlTuthill"
+            }
+        ],
+        "override": true,
+        "user": "",
+        "error": 0,
+        "warning": 0
+      },
+      "distribution": {
+        "Name": "Distribution",
+        "recentDate": "2016-11-03 10:10 AM",
+        "approveDate": "2016-11-03 10:10 AM",
+        "oldApprovedDate": "2016-11-03 10:10 AM",
+        "recentDates": [
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-03 10:10 AM",
+              "override": true,
+              "user": ""
+            },
+            {
+              "error": 5,
+              "warning": 0,
+              "date":"2016-11-02 06:10 AM",
+              "override": false,
+              "user": "LSherman"
+            },
+            {
+              "error": 8,
+              "warning": 0,
+              "date":"2016-11-01 10:10 AM",
+              "override": false,
+              "user": "LSherman"
+            }
+        ],
+        "override": true,
+        "user": "",
+        "error": 0,
+        "warning": 0
+      },
+      "oneview": {
+        "Name": "OneView Sheet- Fund Facts",
+        "recentDate": "2016-11-04 10:10 AM",
+        "approveDate": "2016-11-04 10:10 AM",
+        "oldApprovedDate": "2016-11-04 10:10 AM",
+        "recentDates": [
+            {
+              "error": 0,
+              "warning": 0,
+              "date":"2016-11-04 10:10 AM",
+              "override": true,
+              "user": ""
+            }
+        ],
+        "override": true,
+        "user": "",
+        "error": 0,
+        "warning": 0
+      }
+    },    
+    "funds": [
+      {
+        "Name": "WMF Global Bond (IE) 12371",
+        "currency": "",
+        "coreHoldingID": "567",
+        "poe": "65",
+        "nav": "677",
+        "isin": "543",
+        "missing": ["", "567", "56", "6", "566"],
+        "children": [
+            {
+              "Name": "Share Class",
+              "currency": "",
+              "coreHoldingID": "",
+              "poe": "",
+              "nav": "6575",
+              "isin": "",
+              "visible": false              
+            },
+            {
+              "Name": "Share Class",
+              "currency": "USD 860",
+              "coreHoldingID": "56835",
+              "poe": "5654",
+              "nav": "",
+              "isin": "454",
+              "visible": false
+            }
+        ],
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "WMF Gbl Hlth Care",
+        "currency": "USD 500",
+        "coreHoldingID": "6778",
+        "poe": "Poe",
+        "nav": "",
+        "isin": "6755",
+        "missing": ["USD 350", "6778", "56", "", "6755"],
+        "children": [
+            {
+              "Name": "Share Class",
+              "currency": "",
+              "coreHoldingID": "",
+              "poe": "456",
+              "nav": "",
+              "isin": "6564",
+              "visible": false
+            },
+            {
+              "Name": "Share Class",
+              "currency": "USD 600",
+              "coreHoldingID": "56677",
+              "poe": "",
+              "nav": "456",
+              "isin": "678",
+              "visible": false
+            }
+        ],
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "WMF Opp Themes",
+        "currency": "USD 540",
+        "coreHoldingID": "4567",
+        "poe": "",
+        "nav": "456",
+        "isin": "567",
+        "missing": ["USD 300", "4567", "", "435", "44676"],
+        "children": [
+            {
+              "Name": "Share Class",
+              "currency": "",
+              "coreHoldingID": "6789",
+              "poe": "67",
+              "nav": "",
+              "isin": "685",
+              "visible": false
+            },
+            {
+              "Name": "Share Class",
+              "currency": "USD 8000",
+              "coreHoldingID": "",
+              "poe": "658",
+              "nav": "657",
+              "isin": "",
+              "visible": false
+            }
+        ],
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "WMF Gbl Credit BAM (IE)",
+        "currency": "Base currency",
+        "coreHoldingID": "",
+        "poe": "645",
+        "nav": "456",
+        "isin": "7878",
+        "missing": ["USD 300", "", "456", "56", "987"],
+        "children": [
+            {
+              "Name": "Share Class",
+              "currency": "Base currency",
+              "coreHoldingID": "5678",
+              "poe": "435",
+              "nav": "45",
+              "isin": "6767",
+              "visible": false
+            },
+            {
+              "Name": "Share Class",
+              "currency": "",
+              "coreHoldingID": "",
+              "poe": "67",
+              "nav": "789",
+              "isin": "676",
+              "visible": false
+            }
+        ],
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      }
+    ],
+    "characteristics": [
+      {
+        "Name": "0201",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "0682",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "3T32",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "6136",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "5991",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "39V7",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "4S97",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      }
+    ],
+    "shareClass": [
+      {
+        "Name": "GBP Class S15 Accumulate Unhedged (489935)",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "USD Class K Accumulate Unhedged (5825989)",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "EUR Class F Distribute Unhedged (5843171)",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      }
+    ],
+    "nav": [
+      {
+        "Name": "IE0000710172",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "IE0002895195",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "IE0003110479",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "IE0003111113",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "IE0004890525",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "IE00B129GH09",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      }
+    ],
+    "holdings": [
+      {
+        "Name": "0201",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "0682",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "3T32",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "6136",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "5991",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "39V7",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "4S97",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      }
+    ],
+    "distribution": [
+      {
+        "Name": "0201",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "0682",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "3T32",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "6136",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "5991",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "39V7",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      },
+      {
+        "Name": "4S97",
+        "visible": {
+          "error": false,
+          "warning": false,
+          "fund": false
+        }
+      }
+    ],
+    "oneview": []
+  },
+  {
+    "fundFamilly": "Fixed Income",
     "asOfDate": "2016-10-31",
     "approveDate": "2016-11-01 9:10 AM",
     "recentDate": "2016-11-02 10:10 AM",
