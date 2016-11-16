@@ -1,0 +1,296 @@
+[
+  {
+    "fundFamilly": "Fixed Income",
+    "asOfDate": "2016-10-10",
+    "funds": [
+      {
+        "Name": "3456",
+        "currency": "",
+        "coreHoldingID": "567",
+        "poe": "65",
+        "nav": "677",
+        "isin": "543",
+        "missing": ["", "567", "56", "6", "566"],
+        "visible": true,
+        "children": [
+            {
+              "Name": "Share Class",
+              "currency": "",
+              "coreHoldingID": "",
+              "poe": "",
+              "nav": "6575",
+              "isin": "",
+              "visible": true,
+              "children": [
+                    {
+                      "Name": "45678",
+                      "currency": "",
+                      "coreHoldingID": "",
+                      "poe": "56",
+                      "nav": "",
+                      "isin": "434"
+                    },
+                    {
+                      "Name": "76457",
+                      "currency": "USD 508",
+                      "coreHoldingID": "56835",
+                      "poe": "",
+                      "nav": "6556",
+                      "isin": ""
+                    }
+                ]
+            },
+            {
+              "Name": "Share Class",
+              "currency": "USD 860",
+              "coreHoldingID": "56835",
+              "poe": "5654",
+              "nav": "",
+              "isin": "454",
+              "visible": true,
+              "children": [
+                    {
+                      "Name": "65789",
+                      "currency": "",
+                      "coreHoldingID": "5677",
+                      "poe": "",
+                      "nav": "456",
+                      "isin": ""
+                    },
+                    {
+                      "Name": "12643",
+                      "currency": "USD 2050",
+                      "coreHoldingID": "",
+                      "poe": "456",
+                      "nav": "",
+                      "isin": "456"
+                    }
+                ]
+            }
+        ]
+      },
+      {
+        "Name": "6789",
+        "currency": "USD 500",
+        "coreHoldingID": "6778",
+        "poe": "Poe",
+        "nav": "",
+        "isin": "6755",
+        "visible": true,
+        "missing": ["USD 350", "6778", "56", "", "6755"],
+        "children": [
+            {
+              "Name": "Share Class",
+              "currency": "",
+              "coreHoldingID": "",
+              "poe": "456",
+              "nav": "",
+              "isin": "6564",
+              "visible": true
+            },
+            {
+              "Name": "Share Class",
+              "currency": "USD 600",
+              "coreHoldingID": "56677",
+              "poe": "",
+              "nav": "456",
+              "isin": "678",
+              "visible": true
+            }
+        ]        
+      },
+      {
+        "Name": "6437",
+        "currency": "USD 540",
+        "coreHoldingID": "4567",
+        "poe": "",
+        "nav": "456",
+        "isin": "567",
+        "visible": true,
+        "missing": ["USD 300", "4567", "", "435", "44676"],
+        "children": [
+            {
+              "Name": "Share Class",
+              "currency": "",
+              "coreHoldingID": "6789",
+              "poe": "67",
+              "nav": "",
+              "isin": "685",
+              "visible": true
+            },
+            {
+              "Name": "Share Class",
+              "currency": "USD 8000",
+              "coreHoldingID": "",
+              "poe": "658",
+              "nav": "657",
+              "isin": "",
+              "visible": true
+            }
+        ]
+      },
+      {
+        "Name": "6785",
+        "currency": "Base currency",
+        "coreHoldingID": "",
+        "poe": "645",
+        "nav": "456",
+        "isin": "7878",
+        "visible": true,
+        "missing": ["USD 300", "", "456", "56", "987"],
+        "children": [
+            {
+              "Name": "Share Class",
+              "currency": "Base currency",
+              "coreHoldingID": "5678",
+              "poe": "435",
+              "nav": "45",
+              "isin": "6767",
+              "visible": true
+            },
+            {
+              "Name": "Share Class",
+              "currency": "",
+              "coreHoldingID": "",
+              "poe": "67",
+              "nav": "789",
+              "isin": "676",
+              "visible": true
+            }
+        ]        
+      }
+    ]
+  },
+  {
+    "fundFamilly": "Mutual Fund",
+    "asOfDate": "2016-04-15",
+    "funds": [
+      {
+        "Name": "6803",
+        "currency": "USD 760",
+        "coreHoldingID": "5667",
+        "poe": "455",
+        "nav": "",
+        "isin": "7887",
+        "visible": true,
+        "missing": ["USD 300", "5667", "Poe", "", "ISIN"],
+        "children": [
+            {
+              "Name": "Share Class",
+              "currency": "",
+              "coreHoldingID": "",
+              "poe": "345",
+              "nav": "67",
+              "isin": "6768",
+              "visible": true
+            },
+            {
+              "Name": "Share Class",
+              "currency": "USD 3500",
+              "coreHoldingID": "9987",
+              "poe": "",
+              "nav": "7687",
+              "isin": "786",
+              "visible": true
+            }
+        ]
+      },
+      {
+        "Name": "6789",
+        "currency": "",
+        "coreHoldingID": "",
+        "poe": "776",
+        "nav": "456",
+        "isin": "8997",
+        "visible": true,
+        "missing": ["USD 300", "", "Poe", "Nav", "7878"],
+        "children": [
+            {
+              "Name": "Share Class",
+              "currency": "USD 500",
+              "coreHoldingID": "9876",
+              "poe": "345",
+              "nav": "787",
+              "isin": "7879",
+              "visible": true
+            },
+            {
+              "Name": "Share Class",
+              "currency": "USD 580",
+              "coreHoldingID": "7874",
+              "poe": "243",
+              "nav": "",
+              "isin": "675",
+              "visible": true
+            }
+        ]        
+      }
+    ]
+  },
+  {
+    "fundFamilly": "Other Income",
+    "asOfDate": "2016-06-08",
+    "funds": [
+      {
+        "Name": "9860",
+        "currency": "USD 760",
+        "coreHoldingID": "",
+        "poe": "556",
+        "nav": "767",
+        "isin": "6464",
+        "visible": true,
+        "missing": ["USD 300", "", "998", "78", "7887"],
+        "children": [
+            {
+              "Name": "Share Class",
+              "currency": "",
+              "coreHoldingID": "",
+              "poe": "",
+              "nav": "768",
+              "isin": "6767",
+              "visible": true
+            },
+            {
+              "Name": "Share Class",
+              "currency": "USD 800",
+              "coreHoldingID": "",
+              "poe": "",
+              "nav": "657",
+              "isin": "",
+              "visible": true
+            }
+        ]
+      },
+      {
+        "Name": "6789",
+        "currency": "USD 300",
+        "coreHoldingID": "",
+        "poe": "435",
+        "nav": "435",
+        "isin": "6767",
+        "visible": true,
+        "missing": ["USD 300", "", "76876", "45", "6767"],
+        "children": [
+            {
+              "Name": "Share Class",
+              "currency": "USD 560",
+              "coreHoldingID": "",
+              "poe": "678",
+              "nav": "",
+              "isin": "786",
+              "visible": true
+            },
+            {
+              "Name": "Share Class",
+              "currency": "USD 560",
+              "coreHoldingID": "",
+              "poe": "",
+              "nav": "768",
+              "isin": "6776",
+              "visible": true
+            }
+        ]        
+      }
+    ]
+  }
+]
